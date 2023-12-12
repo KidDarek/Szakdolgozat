@@ -1,0 +1,2 @@
+# Szakdolgozat
+Szakdolgozatom repoja
