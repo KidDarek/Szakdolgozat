@@ -20,6 +20,8 @@ public class Spell : MonoBehaviour
 
         GetShield();
 
+        Heal();
+
     }
     void DealDamage()
     {
@@ -60,8 +62,19 @@ public class Spell : MonoBehaviour
         GameManager.instance.heroData.shield += data.hp;
     }
 
+    void Heal()
+    {
+        if (!data.isHealing)
+        {
+            return;
+        }
+        GameManager.instance.heroData.currentHp += data.dmg + GameManager.instance.heroData.spellDmgBonus;
+    }
+
     private void OnDisable()
     {
         GetComponent<CardAction>().onCardPlayed -= OnCardPlayed;
     }
+
+
 }

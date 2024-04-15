@@ -6,12 +6,12 @@ using UnityEngine;
 
 public enum CardTypes
 {
-    Spell, Equipment, ArenaEffect, Summon
+    Spell, Equipment, ArenaEffect, Summon, Token
 }
 
 public enum DamageType
 {
-    Physical, Magic, None
+    Physical, Magic,None
 }
 
 [CreateAssetMenu(menuName = "CardData")]
@@ -23,6 +23,7 @@ public class CardDataSo : ScriptableObject
     public int draws;
     public int cost;
     public bool isActionCost;
+    public bool isHealing;
     public string cardName;
     public string description;
     public DamageType dmgType;
