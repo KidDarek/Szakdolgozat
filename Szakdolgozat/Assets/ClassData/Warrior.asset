@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76939a228a69cfd4eab7f9e7ca0a764c, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  hp: 40
+  shield: 0
+  ap: 3
+  bap: 3
+  attackDmgBonus: 0
+  spellDmgBonus: 0
+  sprite: {fileID: 0}
+  characterKlass: 0
+  weapon: 0
+  prefab: {fileID: 874573812113703234, guid: d627864816086574e810fda3ead0580a, type: 3}
