@@ -21,7 +21,7 @@ public class CardMovement : MonoBehaviour
     void Update()
     {
         if (!selected && !GameManager.instance.cardsOnBoard.Contains(gameObject) 
-            || IsTouchingMouse(parent) && Input.GetMouseButtonUp(0))
+            || IsTouchingMouse(parent) && Input.GetMouseButtonUp(0) && !IsEquipment())
         {
             MoveBack();
         }

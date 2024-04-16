@@ -13,12 +13,6 @@ public class CardAction : MonoBehaviour
         data = GetComponent<Card>().data;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlayCard() 
     {
         onCardPlayed?.Invoke();

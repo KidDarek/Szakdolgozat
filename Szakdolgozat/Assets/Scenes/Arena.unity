@@ -1895,7 +1895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b70a2025f7cda14b8f1ac5f267c9ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroData: {fileID: 11400000, guid: 8f2885b9aa1d9c141bee779c852fb08a, type: 2}
+  heroData: {fileID: 0}
   cardsOnBoard: []
   playerDeck: {fileID: 1728781691}
   isPlayerTurn: 0

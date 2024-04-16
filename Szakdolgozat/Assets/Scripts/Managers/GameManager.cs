@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        if (StaticData.hero != null)
+        {
+            heroData = StaticData.hero;
+        }
         heroData.currentAp = startingAp;
         heroData.currentRap = heroData.maxRap;
         heroData.currentHp = heroData.maxHp;
