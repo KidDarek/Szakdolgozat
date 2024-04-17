@@ -30,6 +30,8 @@ public class ClassDataSo : ScriptableObject
     public Classes characterKlass;
     public WeaponTypes weapon;
     public GameObject prefab;
+    public List<CardDataSo> baseDeck;
+    public List<CardDataSo> deck = new();
 
 
     public void RestoreAp()
@@ -46,7 +48,7 @@ public class ClassDataSo : ScriptableObject
         currentHp += health;
         SetToMax();
     }
-    void SetToMax() 
+    void SetToMax()
     {
         if (currentAp > maxAp)
         {
@@ -55,6 +57,13 @@ public class ClassDataSo : ScriptableObject
         if (currentHp > maxHp)
         {
             currentHp = maxHp;
+        }
+    }
+    public void Decker()
+    {
+        for (int i = 0; i < baseDeck.Count; i++)
+        {
+            deck.Add(baseDeck[i]);
         }
     }
 }

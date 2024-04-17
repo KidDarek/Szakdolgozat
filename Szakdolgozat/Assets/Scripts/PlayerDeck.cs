@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDeck : MonoBehaviour
 {
-    [SerializeField] List<CardDataSo> deck;
+    List<CardDataSo> deck;
     [SerializeField] Transform hand;
     List<CardDataSo> deadDeck = new();
     bool alreadyDrawn;
@@ -15,6 +15,7 @@ public class PlayerDeck : MonoBehaviour
     }
     void Start()
     {
+        deck = GameManager.instance.heroData.deck;
         Utils.ShuffleList(deck);
         for (int i = 0; i < 4; i++)
         {
@@ -44,8 +45,10 @@ public class PlayerDeck : MonoBehaviour
 
     void RemakeDeck() 
     {
-        deck = new();
-        deck.AddRange(deadDeck);
+        for (int i = 0; i < deadDeck.Count; i++)
+        {
+            deck.Add(deadDeck[i]);
+        }
         deadDeck.Clear();
         Utils.ShuffleList(deck);
     }

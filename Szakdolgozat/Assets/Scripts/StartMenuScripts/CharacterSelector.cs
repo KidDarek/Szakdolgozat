@@ -9,6 +9,8 @@ public class CharacterSelector : MonoBehaviour
 
     private void OnMouseDown()
     {
+        klass.deck.Clear();
+        klass.Decker();
         StaticData.hero = klass;
         NextScene();
     }

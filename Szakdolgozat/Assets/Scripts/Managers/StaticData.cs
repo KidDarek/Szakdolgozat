@@ -5,5 +5,4 @@ using UnityEngine;
 public static class StaticData
 {
     public static ClassDataSo hero;
-
 }

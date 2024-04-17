@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   currentHp: 10
-  shield: 2
+  shield: 0
   maxAp: 6
-  currentAp: 2
+  currentAp: 3
   apRegain: 3
   maxRap: 3
-  currentRap: 1
-  attackDmgBonus: 2
+  currentRap: 3
+  attackDmgBonus: 0
   spellDmgBonus: 0
-  sprite: {fileID: 21300000, guid: ed01ecba8772b1d41991fd49577f71f5, type: 3}
+  sprite: {fileID: 21300000, guid: d73e855d44cedfe40a89a950cfa8d668, type: 3}
   characterKlass: 0
   weapon: 0
   prefab: {fileID: 3605123740647794360, guid: d41f4777ca0396449b59b12a49a5d29c, type: 3}
+  deck: []

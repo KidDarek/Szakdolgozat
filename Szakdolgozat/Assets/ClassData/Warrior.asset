@@ -13,16 +13,42 @@ MonoBehaviour:
   m_Name: Warrior
   m_EditorClassIdentifier: 
   maxHp: 10
-  currentHp: 10
+  currentHp: 7
   shield: 0
   maxAp: 6
-  currentAp: 3
+  currentAp: 0
   apRegain: 3
   maxRap: 3
   currentRap: 3
-  attackDmgBonus: 0
+  attackDmgBonus: 1
   spellDmgBonus: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f4d853e0cbf17d149a9fdac989427f85, type: 3}
   characterKlass: 0
   weapon: 0
   prefab: {fileID: 874573812113703234, guid: 4fdf08fdc1e10c0498d8eb2022e788a5, type: 3}
+  baseDeck:
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 80e6a6c9b2de4344d9cc86743697f8c0, type: 2}
+  - {fileID: 11400000, guid: 80e6a6c9b2de4344d9cc86743697f8c0, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: ac2f452a39d1b7b4a9a6ce5f91221c28, type: 2}
+  - {fileID: 11400000, guid: ac2f452a39d1b7b4a9a6ce5f91221c28, type: 2}
+  - {fileID: 11400000, guid: 8bdec24ef1abe38449d789f3252a558d, type: 2}
+  - {fileID: 11400000, guid: 8bdec24ef1abe38449d789f3252a558d, type: 2}
+  deck:
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 80e6a6c9b2de4344d9cc86743697f8c0, type: 2}
+  - {fileID: 11400000, guid: 8bdec24ef1abe38449d789f3252a558d, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}

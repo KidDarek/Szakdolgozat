@@ -22,7 +22,14 @@ public class Spell : MonoBehaviour
 
         Heal();
 
+        DoubleStrike();
+
+        FuryStrike();
+
+
     }
+
+    // Common Spells
     void DealDamage()
     {
         if (data.dmg == 0)
@@ -70,6 +77,30 @@ public class Spell : MonoBehaviour
         }
         GameManager.instance.heroData.currentHp += data.dmg + GameManager.instance.heroData.spellDmgBonus;
     }
+
+    // Warior Spells
+    void DoubleStrike() 
+    {
+        if (data.cardName != "Double Strike")
+        {
+            return;
+        }
+        DealDamage();
+    }
+
+    void FuryStrike() 
+    {
+        if (data.cardName != "Fury Strikes")
+        {
+            return;
+        }
+        for (int i = 0; i < GameManager.instance.heroData.currentAp-1; i++)
+        {
+            EnemyManager.instance.enemyData.currentHp -= data.dmg + GameManager.instance.heroData.attackDmgBonus;
+        }
+        GameManager.instance.heroData.currentAp = 0;
+    }
+
 
     private void OnDisable()
     {
