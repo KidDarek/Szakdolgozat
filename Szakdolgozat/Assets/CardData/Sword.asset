@@ -15,8 +15,9 @@ MonoBehaviour:
   hp: 0
   dmg: 1
   draws: 0
-  cost: 1
+  cost: 2
   isActionCost: 1
+  isHealing: 0
   cardName: Sword
   description: Its a sword
   dmgType: 0
