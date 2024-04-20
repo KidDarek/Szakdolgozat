@@ -14,6 +14,11 @@ public class Equipment : MonoBehaviour
 
     public void OnCardPlayed() 
     {
+        BuffDamage(data);
+    }
+
+    public void BuffDamage(CardDataSo data) 
+    {
         if (data.dmgType == DamageType.Physical)
         {
             GameManager.instance.heroData.attackDmgBonus += data.dmg;

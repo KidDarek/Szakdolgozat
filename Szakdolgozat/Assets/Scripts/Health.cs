@@ -12,7 +12,6 @@ public class Health : MonoBehaviour
     void Start()
     {
         data = GameManager.instance.heroData;
-        print(data);
         healts = new GameObject[data.maxHp];
         CreateHealthPoints(data);
     }

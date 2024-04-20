@@ -26,3 +26,5 @@ MonoBehaviour:
   characterKlass: 4
   weapon: 2
   prefab: {fileID: 874573812113703234, guid: 77a7afd61c8a1e74a9b7737556e6dcaf, type: 3}
+  baseDeck: []
+  deck: []

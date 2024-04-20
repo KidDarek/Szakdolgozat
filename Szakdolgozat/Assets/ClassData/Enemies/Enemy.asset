@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   currentHp: 10
-  shield: 0
+  shield: 10
   maxAp: 4
   currentAp: 2
   apRegain: 2
@@ -26,3 +26,40 @@ MonoBehaviour:
   characterKlass: 0
   weapon: 0
   prefab: {fileID: 0}
+  baseDeck:
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  deck:
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}

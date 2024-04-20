@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spell : MonoBehaviour
 {
     CardDataSo data;
-    // Start is called before the first frame update
+    
     void Start()
     {
         data = GetComponent<Card>().data;
@@ -14,37 +14,120 @@ public class Spell : MonoBehaviour
 
     public void OnCardPlayed()
     {
-        DealDamage();
+        Strike();
 
-        DrawCards();
+        Draw();
 
-        GetShield();
-
-        Heal();
-
-        DoubleStrike();
-
-        FuryStrike();
-
-
+        Defend();
     }
 
     // Common Spells
-    void DealDamage()
+
+    void Strike() 
     {
+        if (data.cardName != "Strike")
+        {
+            return;
+        }
+        DealDamage(data);
+    }
+
+    void Defend()
+    {
+        if (data.cardName != "Shield")
+        {
+            return;
+        }
+        GetShield();
+    }
+
+    void Draw()
+    {
+        if (data.cardName != "Draw")
+        {
+            return;
+        }
+        DrawCards();
+    }
+
+       //
+       //These are the card functions
+       //
+
+    public void DealDamage(CardDataSo data)
+    {
+        GameManager.instance.strikeCount++;
         if (data.dmg == 0)
         {
             return;
         }
+        if (data.cardType == CardTypes.Token)
+        {
+            TokenDamageCheck(data);
+            return;
+        }
+        NormalDamageCheck(data);
+
+
+    }
+
+    void NormalDamageCheck(CardDataSo data) 
+    {
         if (data.dmgType == DamageType.Physical)
         {
-            EnemyManager.instance.enemyData.currentHp -= data.dmg + GameManager.instance.heroData.attackDmgBonus;
+            ShieldCheck(data.dmg + GameManager.instance.heroData.attackDmgBonus);
         }
         else if (data.dmgType == DamageType.Magic)
         {
-            EnemyManager.instance.enemyData.currentHp -= data.dmg + GameManager.instance.heroData.spellDmgBonus;
+            ShieldCheck(data.dmg + GameManager.instance.heroData.spellDmgBonus);
         }
+    }
 
+    void TokenDamageCheck(CardDataSo data)
+    {
+        if (data.dmgType == DamageType.Physical)
+        {
+            ShieldCheck(data.dmg);
+        }
+        else if (data.dmgType == DamageType.Magic)
+        {
+            ShieldCheck(data.dmg);
+        }
+    }
+
+    void ShieldCheck(int dmg) 
+    {
+        int shieldDmg = GameManager.instance.shieldDmg;
+        if (EnemyManager.instance.enemyData.shield != 0)
+        {
+            if (dmg + shieldDmg < EnemyManager.instance.enemyData.shield)
+            {
+                EnemyManager.instance.enemyData.shield -= shieldDmg;
+            }
+            else
+            {
+                bool fleshRipperOn = false;
+                for (int i = 0; i < GameManager.instance.cardsOnBoard.Count; i++)
+                {
+                    if (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data.cardName == "Flesh Ripper")
+                    {
+                        fleshRipperOn = true;
+                    }
+                }
+                if (fleshRipperOn)
+                {
+                    EnemyManager.instance.enemyData.shield -= shieldDmg;
+                    EnemyManager.instance.enemyData.currentHp -= dmg - EnemyManager.instance.enemyData.shield;
+                }
+                else
+                {
+                    EnemyManager.instance.enemyData.currentHp -= dmg - EnemyManager.instance.enemyData.shield;
+                    EnemyManager.instance.enemyData.shield -= shieldDmg;
+                }
+            }
+            return;
+        }
+        EnemyManager.instance.enemyData.currentHp -= dmg;
     }
 
     public void DrawCards()
@@ -59,7 +142,7 @@ public class Spell : MonoBehaviour
         }
     }
 
-    void GetShield()
+    public void GetShield()
     {
 
         if (data.hp == 0)
@@ -69,7 +152,7 @@ public class Spell : MonoBehaviour
         GameManager.instance.heroData.shield += data.hp;
     }
 
-    void Heal()
+    public void Heal()
     {
         if (!data.isHealing)
         {
@@ -77,30 +160,6 @@ public class Spell : MonoBehaviour
         }
         GameManager.instance.heroData.currentHp += data.dmg + GameManager.instance.heroData.spellDmgBonus;
     }
-
-    // Warior Spells
-    void DoubleStrike() 
-    {
-        if (data.cardName != "Double Strike")
-        {
-            return;
-        }
-        DealDamage();
-    }
-
-    void FuryStrike() 
-    {
-        if (data.cardName != "Fury Strikes")
-        {
-            return;
-        }
-        for (int i = 0; i < GameManager.instance.heroData.currentAp-1; i++)
-        {
-            EnemyManager.instance.enemyData.currentHp -= data.dmg + GameManager.instance.heroData.attackDmgBonus;
-        }
-        GameManager.instance.heroData.currentAp = 0;
-    }
-
 
     private void OnDisable()
     {

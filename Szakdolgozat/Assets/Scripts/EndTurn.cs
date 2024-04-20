@@ -9,7 +9,6 @@ public class EndTurn : MonoBehaviour
         //Wait for 2 seconds
         yield return new WaitForSeconds(2);
 
-        HitPlayer();
 
         GameManager.instance.isPlayerTurn = true;
 
@@ -38,27 +37,11 @@ public class EndTurn : MonoBehaviour
             return;
         }
         GameManager.instance.isPlayerTurn = false;
+        GameManager.instance.heroData.attackDmgBonus -= GameManager.instance.tempAttackBonus[0];
+        GameManager.instance.heroData.spellDmgBonus -= GameManager.instance.tempAttackBonus[1];
+        GameManager.instance.ResetTempAttack();
         transform.GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(EnemyTurn());
-    }
-
-    void HitPlayer() 
-    {
-        int dmg = 2;
-        if (GameManager.instance.heroData.shield != 0)
-        {
-            if (dmg < GameManager.instance.heroData.shield)
-            {
-                GameManager.instance.heroData.shield--;
-            }
-            else
-            {
-                GameManager.instance.heroData.currentHp -= dmg - GameManager.instance.heroData.shield;
-                GameManager.instance.heroData.shield--;
-            }
-            return;
-        }
-        GameManager.instance.heroData.currentHp -= dmg;
     }
 
 }

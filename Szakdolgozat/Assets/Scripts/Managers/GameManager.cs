@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> cardsOnBoard;
     public PlayerDeck playerDeck;
     public bool isPlayerTurn;
+    public int[] tempAttackBonus = {0,0};
+    public int strikeCount = 0;
+    public int shieldDmg = 1;
 
     int startingAp = 3;
     void Awake()
@@ -49,5 +52,11 @@ public class GameManager : MonoBehaviour
         {
             return heroData.currentRap >= data.cost;
         }
+    }
+
+    public void ResetTempAttack() 
+    {
+        tempAttackBonus[0] = 0;
+        tempAttackBonus[1] = 0;
     }
 }

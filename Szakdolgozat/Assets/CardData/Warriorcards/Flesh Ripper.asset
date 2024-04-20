@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fdff44ea8c10394380a224da1cbd11c, type: 3}
+  m_Name: Flesh Ripper
+  m_EditorClassIdentifier: 
+  hp: 0
+  dmg: 0
+  draws: 0
+  cost: 3
+  isActionCost: 1
+  isHealing: 0
+  cardName: Flesh Ripper
+  description: Makes strikes deal 2 damage to shield before attacking
+  dmgType: 0
+  cardType: 1
+  prefab: {fileID: 874573812113703234, guid: b718a66033742684d81bf75d59280e4d, type: 3}
