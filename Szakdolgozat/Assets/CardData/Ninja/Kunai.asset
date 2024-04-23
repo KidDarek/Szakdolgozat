@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fdff44ea8c10394380a224da1cbd11c, type: 3}
-  m_Name: Defend
+  m_Name: Kunai
   m_EditorClassIdentifier: 
-  hp: 2
-  dmg: 0
+  hp: 0
+  dmg: 1
   draws: 0
   cost: 1
-  isActionCost: 0
+  isActionCost: 1
   isHealing: 0
-  cardName: Defend
-  description: Gain 2 shield
-  dmgType: 2
-  cardType: 0
-  prefab: {fileID: 874573812113703234, guid: 95acb0ac85a88de439afb58578cf4f33, type: 3}
+  cardName: Kunai
+  description: Generates one dagger at the begining of a round
+  dmgType: 0
+  cardType: 1
+  prefab: {fileID: 874573812113703234, guid: 7961933081f9ec24d8924a1e95263adb, type: 3}

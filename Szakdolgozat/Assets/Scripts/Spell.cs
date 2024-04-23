@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spell : MonoBehaviour
 {
     CardDataSo data;
-    
+
     void Start()
     {
         data = GetComponent<Card>().data;
@@ -23,7 +23,7 @@ public class Spell : MonoBehaviour
 
     // Common Spells
 
-    void Strike() 
+    void Strike()
     {
         if (data.cardName != "Strike")
         {
@@ -34,7 +34,7 @@ public class Spell : MonoBehaviour
 
     void Defend()
     {
-        if (data.cardName != "Shield")
+        if (data.cardName != "Defend")
         {
             return;
         }
@@ -50,9 +50,9 @@ public class Spell : MonoBehaviour
         DrawCards();
     }
 
-       //
-       //These are the card functions
-       //
+    //
+    //These are the card functions
+    //
 
     public void DealDamage(CardDataSo data)
     {
@@ -71,7 +71,7 @@ public class Spell : MonoBehaviour
 
     }
 
-    void NormalDamageCheck(CardDataSo data) 
+    void NormalDamageCheck(CardDataSo data)
     {
         if (data.dmgType == DamageType.Physical)
         {
@@ -95,7 +95,7 @@ public class Spell : MonoBehaviour
         }
     }
 
-    void ShieldCheck(int dmg) 
+    public void ShieldCheck(int dmg)
     {
         int shieldDmg = GameManager.instance.shieldDmg;
         if (EnemyManager.instance.enemyData.shield != 0)

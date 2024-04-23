@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a25afb7f2473ca4c8352c2ce8513e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAi: {fileID: 455920636}
 --- !u!61 &288268496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -463,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a535150e1ad534b945d3d14d936421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 11400000, guid: d0a047d21b7fd164b8fe44b337c1d9b5, type: 2}
 --- !u!1 &488516007
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +502,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 1.1
+  m_Spacing: 0.8
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -690,6 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a25afb7f2473ca4c8352c2ce8513e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAi: {fileID: 0}
 --- !u!1 &554253753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1627,8 @@ MonoBehaviour:
   tempAttackBonus: 0000000000000000
   strikeCount: 0
   shieldDmg: 1
+  Tokens:
+  - {fileID: 11400000, guid: 67a78a46263820d49974fcbb1ffc3852, type: 2}
 --- !u!4 &1061527040
 Transform:
   m_ObjectHideFlags: 0
@@ -1783,7 +1788,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1135606003}
   - component: {fileID: 1135606004}
-  - component: {fileID: 1135606005}
   m_Layer: 0
   m_Name: card drawer
   m_TagString: Untagged
@@ -1858,19 +1862,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1135606005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135606002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756bd71acc372e743bc03f526758fe89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand: {fileID: 455920634}
 --- !u!1 &1217287745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2502,6 @@ GameObject:
   - component: {fileID: 1728781687}
   - component: {fileID: 1728781688}
   - component: {fileID: 1728781689}
-  - component: {fileID: 1728781690}
   - component: {fileID: 1728781691}
   m_Layer: 7
   m_Name: card drawer
@@ -2632,18 +2622,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1728781690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728781686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e096dd97fdae54e47bd03a3f1875dada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1728781691
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     public int[] tempAttackBonus = {0,0};
     public int strikeCount = 0;
     public int shieldDmg = 1;
+    [SerializeField] List<CardDataSo> Tokens;
+    public bool tokenDmgOn;
 
     int startingAp = 3;
     void Awake()
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
         heroData.shield = 0;
         heroData.attackDmgBonus = 0;
         heroData.spellDmgBonus = 0;
+        tokenDmgOn = false;
     }
     public void SpendActionOrReaction() 
     {
@@ -59,4 +63,47 @@ public class GameManager : MonoBehaviour
         tempAttackBonus[0] = 0;
         tempAttackBonus[1] = 0;
     }
+
+    public void StartTurnEffect() 
+    {
+        for (int i = 0; i < cardsOnBoard.Count; i++)
+        {
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Kunai")
+            {
+                playerDeck.CreateToken(Tokens[0],0);
+            }
+        }
+    }
+
+    public void EndTurnEffect() 
+    {
+        for (int i = 0; i < cardsOnBoard.Count; i++)
+        {
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Kyoketsu-smoge")
+            {
+                DmgCheck(strikeCount);
+            }
+        }
+        tokenDmgOn = false;
+
+    }
+    public void DmgCheck(int dmg)
+    {
+        if (EnemyManager.instance.enemyData.shield != 0)
+        {
+            if (dmg + shieldDmg < EnemyManager.instance.enemyData.shield)
+            {
+                EnemyManager.instance.enemyData.shield -= shieldDmg;
+            }
+            else
+            {
+                    EnemyManager.instance.enemyData.currentHp -= dmg - EnemyManager.instance.enemyData.shield;
+                    EnemyManager.instance.enemyData.shield -= shieldDmg;
+            }
+            return;
+        }
+        EnemyManager.instance.enemyData.currentHp -= dmg;
+    }
 }
+
+

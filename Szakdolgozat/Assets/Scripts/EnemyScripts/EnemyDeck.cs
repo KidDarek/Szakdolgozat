@@ -9,6 +9,7 @@ public class EnemyDeck : MonoBehaviour
     List<CardDataSo> deadDeck = new();
     Quaternion flipCard;
     bool alreadyDrawn;
+    public int handCount;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -28,11 +29,6 @@ public class EnemyDeck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (deck.Count == 0 && deadDeck.Count != 0)
-        {
-            RemakeDeck();
-        }
-
         if (!GameManager.instance.isPlayerTurn && !alreadyDrawn)
         {
            PutCardInHand();
@@ -45,20 +41,11 @@ public class EnemyDeck : MonoBehaviour
         }
     }
 
-    void RemakeDeck() 
+    public void AddCardToDeck(CardDataSo data) 
     {
-        for (int i = 0; i < deadDeck.Count; i++)
-        {
-            deck.Add(deadDeck[i]);
-        }
-        deadDeck.Clear();
-        Utils.ShuffleList(deck);
+        deck.Add(data);
     }
 
-    public void AddCardToDeadDeck(CardDataSo data) 
-    {
-        deadDeck.Add(data);
-    }
 
     public void PutCardInHand()
     {

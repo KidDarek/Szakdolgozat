@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7068658321925897122}
   - component: {fileID: 2396437193554367594}
   - component: {fileID: 1118636218688057169}
-  - component: {fileID: 9102378091516658280}
+  - component: {fileID: -8246185126949216429}
+  - component: {fileID: -1604894067992860120}
   m_Layer: 0
-  m_Name: Blood Thirster
+  m_Name: Dagger
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.24056602, b: 0.30906403, a: 1}
+  m_Color: {r: 0.37289804, g: 0.18098077, b: 0.46226418, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcaa513ee8ee4444aa14acdf6bec2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 56cf421cfa26b994fbf96b22e6f07457, type: 2}
+  data: {fileID: 11400000, guid: 67a78a46263820d49974fcbb1ffc3852, type: 2}
 --- !u!114 &1118636218688057169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9234be109c88846be084fe0b979270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9102378091516658280
+--- !u!114 &-8246185126949216429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +162,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 874573812113703234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87b2b0f4f35716444b4c86b2f1535019, type: 3}
+  m_Script: {fileID: 11500000, guid: bdcf27c43a127044abda4a0203ee01fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1604894067992860120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874573812113703234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e1227926298a64398fce3f8753a779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4888871139238284737
@@ -263,7 +276,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Blood Thirster
+  m_text: 'Dagger
 
 '
   m_isRightToLeft: 0
@@ -292,8 +305,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.2
-  m_fontSizeBase: 1.2
+  m_fontSize: 1.1
+  m_fontSizeBase: 1.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 348898857338224511}
   - component: {fileID: 2166691992749753490}
-  - component: {fileID: 9055075611713805126}
   - component: {fileID: 1266821353315491131}
   m_Layer: 0
   m_Name: EnemyCard
@@ -90,24 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9055075611713805126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906818297109321476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58dc2675f9ae7914bbbbd87dc7c3d872, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repositoryPosition: 0
-  selected: 0
-  parent: {fileID: 0}
-  deckPosition: -1
-  fieldPosition: -1
-  handPosition: -1
 --- !u!65 &1266821353315491131
 BoxCollider:
   m_ObjectHideFlags: 0

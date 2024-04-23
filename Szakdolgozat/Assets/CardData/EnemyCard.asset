@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fdff44ea8c10394380a224da1cbd11c, type: 3}
-  m_Name: Defend
+  m_Name: EnemyCard
   m_EditorClassIdentifier: 
-  hp: 2
+  hp: 0
   dmg: 0
   draws: 0
-  cost: 1
+  cost: 0
   isActionCost: 0
   isHealing: 0
-  cardName: Defend
-  description: Gain 2 shield
-  dmgType: 2
+  cardName: 
+  description: 
+  dmgType: 0
   cardType: 0
-  prefab: {fileID: 874573812113703234, guid: 95acb0ac85a88de439afb58578cf4f33, type: 3}
+  prefab: {fileID: 5906818297109321476, guid: a77b673e2ecb2ed46a653ea6666ab11d, type: 3}

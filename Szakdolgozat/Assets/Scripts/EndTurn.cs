@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class EndTurn : MonoBehaviour
 {
+    [SerializeField] EnemyAi enemyAi;
     IEnumerator EnemyTurn()
     {
         //Wait for 2 seconds
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
+        enemyAi.PlayCard();
 
         GameManager.instance.isPlayerTurn = true;
 
         GameManager.instance.heroData.RestoreAp();
         GameManager.instance.heroData.RestoreRap();
+
+        GameManager.instance.StartTurnEffect();
 
         transform.GetComponent<SpriteRenderer>().color = Color.green;
     }
@@ -40,7 +44,10 @@ public class EndTurn : MonoBehaviour
         GameManager.instance.heroData.attackDmgBonus -= GameManager.instance.tempAttackBonus[0];
         GameManager.instance.heroData.spellDmgBonus -= GameManager.instance.tempAttackBonus[1];
         GameManager.instance.ResetTempAttack();
+        GameManager.instance.EndTurnEffect();
+        GameManager.instance.strikeCount = 0;
         transform.GetComponent<SpriteRenderer>().color = Color.red;
+        enemyAi.ResetEnemy();
         StartCoroutine(EnemyTurn());
     }
 

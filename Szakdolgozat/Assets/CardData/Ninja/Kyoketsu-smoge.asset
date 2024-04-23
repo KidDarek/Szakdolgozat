@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fdff44ea8c10394380a224da1cbd11c, type: 3}
-  m_Name: Defend
+  m_Name: Kyoketsu-smoge
   m_EditorClassIdentifier: 
-  hp: 2
-  dmg: 0
+  hp: 0
+  dmg: 3
   draws: 0
-  cost: 1
-  isActionCost: 0
+  cost: 3
+  isActionCost: 1
   isHealing: 0
-  cardName: Defend
-  description: Gain 2 shield
-  dmgType: 2
-  cardType: 0
-  prefab: {fileID: 874573812113703234, guid: 95acb0ac85a88de439afb58578cf4f33, type: 3}
+  cardName: Kyoketsu-smoge
+  description: On card Play strike
+  dmgType: 0
+  cardType: 1
+  prefab: {fileID: 874573812113703234, guid: a6814531a6ebf2d4c998ae5fc4e1334a, type: 3}
