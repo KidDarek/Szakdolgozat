@@ -28,8 +28,12 @@ public class NinjaSpells : Spell
         {
             return;
         }
+        if (GameManager.instance.tokenDmgOn)
+        {
+            nData.dmg += daggerDmgBonus;
+        }
         DealDamage(nData);
-
+        nData.dmg -= daggerDmgBonus;
     }
 
     void PocketDaggers()
@@ -40,7 +44,7 @@ public class NinjaSpells : Spell
         }
         for (int i = 0; i < 3; i++)
         {
-            GameManager.instance.playerDeck.CreateToken(token,daggerDmgBonus);
+            GameManager.instance.playerDeck.CreateToken(token);
         }
     }
 
@@ -51,10 +55,10 @@ public class NinjaSpells : Spell
             return;
         }
         GameManager.instance.tokenDmgOn = true;
-        daggerDmgBonus = 3;
+        daggerDmgBonus = 1;
         for (int i = 0; i < 5; i++)
         {
-            GameManager.instance.playerDeck.CreateToken(token,daggerDmgBonus);
+            GameManager.instance.playerDeck.CreateToken(token);
         }
     }
 

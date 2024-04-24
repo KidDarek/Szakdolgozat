@@ -28,6 +28,7 @@ public class WarriorSpells : Spell
         }
         for (int i = 0; i < 2; i++)
         {
+            GameManager.instance.strikeCount++;
             DealDamage(wData);
         }
 
@@ -41,6 +42,7 @@ public class WarriorSpells : Spell
         }
         for (int i = 0; i < GameManager.instance.heroData.currentAp; i++)
         {
+            GameManager.instance.strikeCount++;
             DealDamage(wData);
             GameManager.instance.heroData.currentAp--;
         }

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,7 +68,11 @@ public class GameManager : MonoBehaviour
         {
             if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Kunai")
             {
-                playerDeck.CreateToken(Tokens[0],0);
+                playerDeck.CreateToken(Tokens[0]);
+            }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Paladin Shield")
+            {
+                heroData.shield++;
             }
         }
     }
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
         {
             if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Kyoketsu-smoge")
             {
+                GameManager.instance.strikeCount++;
                 DmgCheck(strikeCount);
             }
         }

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7068658321925897122}
   - component: {fileID: 2396437193554367594}
   - component: {fileID: 1118636218688057169}
-  - component: {fileID: -8246185126949216429}
   - component: {fileID: -629481420937925161}
   m_Layer: 0
   m_Name: Kyoketsu-smoge
@@ -151,18 +150,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e9234be109c88846be084fe0b979270, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-8246185126949216429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874573812113703234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdcf27c43a127044abda4a0203ee01fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-629481420937925161

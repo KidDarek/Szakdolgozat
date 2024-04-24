@@ -38,7 +38,7 @@ public class CardSlot : MonoBehaviour
             && !isSpaceOpen
             && MovementManager.instance.selectedCard.GetComponent<Card>().data.cardType == CardTypes.Equipment)
         {
-            ReplaceEquipment(); 
+            ReplaceEquipment();
         }
     }
     bool IsTouchingMouse(GameObject g)
@@ -47,7 +47,7 @@ public class CardSlot : MonoBehaviour
         return g.GetComponent<Collider2D>().OverlapPoint(point);
     }
 
-    void LeftOrRightSlot(GameObject card) 
+    void LeftOrRightSlot(GameObject card)
     {
         if (card.transform.position.x < 0)
         {
@@ -59,34 +59,55 @@ public class CardSlot : MonoBehaviour
         }
     }
 
-    void ReplaceEquipment() 
+    void ReplaceEquipment()
     {
         for (int i = 0; i < GameManager.instance.cardsOnBoard.Count; i++)
         {
             if (boardSlots[0] == GameManager.instance.cardsOnBoard[i])
             {
+                MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
+                GameManager.instance.playerDeck.AddCardToDeadDeck
+                    (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data);
+                Destroy(GameManager.instance.cardsOnBoard[i]);
+                RemoveEqupmentDmgBonus(GameManager.instance.cardsOnBoard[i]);
                 GameManager.instance.cardsOnBoard.Remove(GameManager.instance.cardsOnBoard[i]);
                 boardSlots[0] = null;
                 MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
                 GameManager.instance.cardsOnBoard.Add(MovementManager.instance.selectedCard);
                 boardSlots[0] = MovementManager.instance.selectedCard;
                 MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
-                MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
                 GameManager.instance.SpendActionOrReaction();
                 MovementManager.instance.isCardDragged = false;
             }
             else if (boardSlots[1] == GameManager.instance.cardsOnBoard[i])
             {
+                MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
+                GameManager.instance.playerDeck.AddCardToDeadDeck
+                    (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data);
+                Destroy(GameManager.instance.cardsOnBoard[i]);
+                RemoveEqupmentDmgBonus(GameManager.instance.cardsOnBoard[i]);
                 GameManager.instance.cardsOnBoard.Remove(GameManager.instance.cardsOnBoard[i]);
                 boardSlots[1] = null;
                 MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
                 GameManager.instance.cardsOnBoard.Add(MovementManager.instance.selectedCard);
                 boardSlots[1] = MovementManager.instance.selectedCard;
                 MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
-                MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
                 GameManager.instance.SpendActionOrReaction();
                 MovementManager.instance.isCardDragged = false;
+
             }
+        }
+    }
+
+    void RemoveEqupmentDmgBonus(GameObject card)
+    {
+        if (card.GetComponent<Card>().data.dmgType == DamageType.Physical)
+        {
+            GameManager.instance.heroData.attackDmgBonus -= card.GetComponent<Card>().data.dmg;
+        }
+        else if (card.GetComponent<Card>().data.dmgType == DamageType.Magic)
+        {
+            GameManager.instance.heroData.spellDmgBonus -= card.GetComponent<Card>().data.dmg;
         }
     }
 }

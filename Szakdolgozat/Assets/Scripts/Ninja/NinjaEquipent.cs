@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class NinjaEquipent : Equipment
 {
-    CardDataSo ndata;
+    CardDataSo nData;
     // Start is called before the first frame update
     void Start()
     {
-        ndata = GetComponent<Card>().data;
+        nData = GetComponent<Card>().data;
         GetComponent<CardAction>().onCardPlayed += onPlayed;
     }
 
@@ -21,23 +21,28 @@ public class NinjaEquipent : Equipment
 
     void Kunai()
     {
-        if (ndata.cardName != "Kunai")
+        if (nData.cardName != "Kunai")
         {
             return;
         }
-        BuffDamage(ndata);
+        BuffDamage(nData);
     }
 
     void Kyoketsu()
     {
-        if (ndata.cardName != "Kyoketsu-smoge")
+        if (nData.cardName != "Kyoketsu-smoge")
         {
             return;
         }
-        BuffDamage(ndata);
+        BuffDamage(nData);
     }
     void WeaponThrow() 
     {
-        GetComponent<Spell>().DealDamage(ndata);
+        if (nData.cardName != "Weapon Throw")
+        {
+            return;
+        }
+        GetComponent<Spell>().DealDamage(nData);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

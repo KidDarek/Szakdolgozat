@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ninja
   m_EditorClassIdentifier: 
   maxHp: 10
-  currentHp: 6
+  currentHp: -2
   shield: 0
   maxAp: 6
-  currentAp: 2
+  currentAp: 5
   apRegain: 3
   maxRap: 3
   currentRap: 3
@@ -27,16 +27,11 @@ MonoBehaviour:
   weapon: 0
   prefab: {fileID: 3605123740647794360, guid: 935525821727ca8428402c0a7f78d8e2, type: 3}
   baseDeck:
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 3f0edbf33efb2604086523c0da39a133, type: 2}
   - {fileID: 11400000, guid: c6f3b0caf0a10a54795168f03725b36e, type: 2}
-  - {fileID: 11400000, guid: c6f3b0caf0a10a54795168f03725b36e, type: 2}
-  - {fileID: 11400000, guid: 3f0edbf33efb2604086523c0da39a133, type: 2}
-  - {fileID: 11400000, guid: 3f0edbf33efb2604086523c0da39a133, type: 2}
-  - {fileID: 11400000, guid: 3f0edbf33efb2604086523c0da39a133, type: 2}
+  - {fileID: 11400000, guid: 011d2d3c6d60db24e976e7805bdc41be, type: 2}
+  - {fileID: 11400000, guid: 95fad92fa1b75d7448ed6409d24127bb, type: 2}
+  - {fileID: 11400000, guid: 6751cd3f795833e479be1ea0388f6dd4, type: 2}
+  - {fileID: 11400000, guid: 56cf421cfa26b994fbf96b22e6f07457, type: 2}
   deck:
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: 3f0edbf33efb2604086523c0da39a133, type: 2}
   - {fileID: 11400000, guid: 3f0edbf33efb2604086523c0da39a133, type: 2}

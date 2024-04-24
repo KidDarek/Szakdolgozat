@@ -29,6 +29,7 @@ public class Spell : MonoBehaviour
         {
             return;
         }
+        GameManager.instance.strikeCount++;
         DealDamage(data);
     }
 
@@ -56,7 +57,6 @@ public class Spell : MonoBehaviour
 
     public void DealDamage(CardDataSo data)
     {
-        GameManager.instance.strikeCount++;
         if (data.dmg == 0)
         {
             return;
