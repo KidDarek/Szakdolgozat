@@ -13,16 +13,27 @@ MonoBehaviour:
   m_Name: Ranger
   m_EditorClassIdentifier: 
   maxHp: 10
-  currentHp: 10
+  currentHp: -2
   shield: 0
   maxAp: 6
-  currentAp: 3
+  currentAp: 5
   apRegain: 3
   maxRap: 3
   currentRap: 3
-  attackDmgBonus: 0
+  attackDmgBonus: 4
   spellDmgBonus: 0
   sprite: {fileID: 0}
   characterKlass: 0
   weapon: 0
   prefab: {fileID: 3605123740647794360, guid: d54dc6ef37a67474594e24e2dfa00e3b, type: 3}
+  baseDeck:
+  - {fileID: 11400000, guid: c82c7ffc6aeda8c4b9a35d05e4ca4eab, type: 2}
+  - {fileID: 11400000, guid: dcb494b7046add346af8f102247cb95d, type: 2}
+  - {fileID: 11400000, guid: 0daf848359a56ee468637e071618acc6, type: 2}
+  - {fileID: 11400000, guid: 74281a2967878b841a8f74440e2c7704, type: 2}
+  - {fileID: 11400000, guid: cef63f2ad6da5204ea3d144798fb343a, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  deck:
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}

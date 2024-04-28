@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fdff44ea8c10394380a224da1cbd11c, type: 3}
+  m_Name: Provoke
+  m_EditorClassIdentifier: 
+  hp: 0
+  dmg: 0
+  draws: 1
+  cost: 1
+  isActionCost: 1
+  isHealing: 0
+  cardName: Provoke
+  description: Gain 1 shield and draw 1 card
+  dmgType: 2
+  cardType: 0
+  prefab: {fileID: 874573812113703234, guid: 5340e5b90303cee48a1028de22f14722, type: 3}

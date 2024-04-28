@@ -13,16 +13,28 @@ MonoBehaviour:
   m_Name: Mage
   m_EditorClassIdentifier: 
   maxHp: 10
-  currentHp: 10
+  currentHp: 6
   shield: 0
   maxAp: 6
-  currentAp: 3
+  currentAp: 0
   apRegain: 3
   maxRap: 3
-  currentRap: 3
+  currentRap: 1
   attackDmgBonus: 0
-  spellDmgBonus: 0
+  spellDmgBonus: 4
   sprite: {fileID: 0}
   characterKlass: 0
-  weapon: 0
+  weapon: 2
   prefab: {fileID: 3605123740647794360, guid: aac28e5a900707141a81976b7a734b6b, type: 3}
+  baseDeck:
+  - {fileID: 11400000, guid: 3b9a39eaf63cccd4b81e9aa511f19156, type: 2}
+  - {fileID: 11400000, guid: 6d904a9c0e6139f41836f375b6b75a26, type: 2}
+  - {fileID: 11400000, guid: 46e542e077b636048bd39b8475d99f4d, type: 2}
+  - {fileID: 11400000, guid: ed023b25f9e14b84987fc3d69f11870f, type: 2}
+  - {fileID: 11400000, guid: 0a86a054d5ceeda448853e9b5d4241a2, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  deck:
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}

@@ -13,16 +13,24 @@ MonoBehaviour:
   m_Name: Druid
   m_EditorClassIdentifier: 
   maxHp: 10
-  currentHp: 10
+  currentHp: 9
   shield: 0
   maxAp: 6
-  currentAp: 3
+  currentAp: 7
   apRegain: 3
   maxRap: 3
   currentRap: 3
   attackDmgBonus: 0
-  spellDmgBonus: 0
+  spellDmgBonus: 1
   sprite: {fileID: 0}
   characterKlass: 0
   weapon: 0
   prefab: {fileID: 3605123740647794360, guid: 1c027c4b9d84de24f99e1c279f56cbd5, type: 3}
+  baseDeck:
+  - {fileID: 11400000, guid: c2ff21d2e4efc2840bde7f120ed60ea5, type: 2}
+  - {fileID: 11400000, guid: 4e5ce6630d37ced46aab307b054ff74f, type: 2}
+  - {fileID: 11400000, guid: 3fdd5c05be7f8a142a6a794ded066efe, type: 2}
+  - {fileID: 11400000, guid: adcb0ff7fb9f1fb4bb6a98c5584dc880, type: 2}
+  - {fileID: 11400000, guid: eaa95e1019230624694ee3767117f1ce, type: 2}
+  deck:
+  - {fileID: 11400000, guid: c2ff21d2e4efc2840bde7f120ed60ea5, type: 2}

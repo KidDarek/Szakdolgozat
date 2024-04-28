@@ -18,5 +18,6 @@ public class CardAction : MonoBehaviour
         onCardPlayed?.Invoke();
     }
 
+    
 
 }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Alchemist
   m_EditorClassIdentifier: 
   maxHp: 10
-  currentHp: 10
+  currentHp: 8
   shield: 0
   maxAp: 6
-  currentAp: 3
+  currentAp: 5
   apRegain: 3
   maxRap: 3
   currentRap: 3
@@ -27,5 +27,9 @@ MonoBehaviour:
   weapon: 2
   prefab: {fileID: 874573812113703234, guid: 77a7afd61c8a1e74a9b7737556e6dcaf, type: 3}
   baseDeck:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4146b476570198b4bb5d23ee58342d5a, type: 2}
+  - {fileID: 11400000, guid: 21f5c63834bdc8046bc4edef0e723e67, type: 2}
+  - {fileID: 11400000, guid: 97e65305a4f9def47b5e98e132581fee, type: 2}
+  - {fileID: 11400000, guid: 1ec3c8d00f3e1874db9ccc245d8e2a5a, type: 2}
+  - {fileID: 11400000, guid: 6871992b3cfc79a4d837711d960657ab, type: 2}
   deck: []

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fdff44ea8c10394380a224da1cbd11c, type: 3}
+  m_Name: Wind Swept Hills
+  m_EditorClassIdentifier: 
+  hp: 0
+  dmg: 0
+  draws: 0
+  cost: 2
+  isActionCost: 0
+  isHealing: 0
+  cardName: Wind Swept Hills
+  description: At the start of the round draw 1 more card
+  dmgType: 2
+  cardType: 2
+  prefab: {fileID: 874573812113703234, guid: b78ecf6c0e4ef644d9cd6ca861ca27ce, type: 3}

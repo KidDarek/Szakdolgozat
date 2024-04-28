@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arena.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CardSelector.unity
+    guid: 2f6d4597d6fad1b46a566f5747a35eb5
   m_configObjects: {}

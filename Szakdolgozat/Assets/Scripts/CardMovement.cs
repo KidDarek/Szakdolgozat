@@ -21,17 +21,29 @@ public class CardMovement : MonoBehaviour
     void Update()
     {
         if (!selected && !GameManager.instance.cardsOnBoard.Contains(gameObject) 
-            || IsTouchingMouse(parent) && Input.GetMouseButtonUp(0) && !IsEquipment())
+            || IsTouchingMouse(parent) && Input.GetMouseButtonUp(0) && !IsEquipment() && !IsAE() && !IsSummon())
         {
             MoveBack();
         }
-        else if(!IsTouchingMouse(parent) && Input.GetMouseButtonUp(0) && !IsEquipment())
+        else if(!IsTouchingMouse(parent) && Input.GetMouseButtonUp(0) && !IsEquipment() && !IsAE() && !IsSummon())
         {
             if (GameManager.instance.IsCardPlayable(GetComponent<Card>().data))
             {
                 transform.GetComponent<CardAction>().PlayCard();
                 GameManager.instance.SpendActionOrReaction();
-                GameManager.instance.playerDeck.AddCardToDeadDeck(GetComponent<Card>().data);
+                if (IsArcaneSpellbookDown())
+                {
+                    GameManager.instance.playerDeck.PutCardInHand();
+                }
+                if (GameManager.instance.firstPotionOn)
+                {
+                    GameManager.instance.playerDeck.CreateCard(GetComponent<Card>().data);
+                    GameManager.instance.firstPotionOn = false;
+                }
+                if (gameObject.GetComponent<Card>().data.cardType != CardTypes.Token)
+                {
+                    GameManager.instance.playerDeck.AddCardToDeadDeck(GetComponent<Card>().data);
+                }
                 Destroy(gameObject);
             }
             else
@@ -113,5 +125,37 @@ public class CardMovement : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    bool IsAE()
+    {
+        if (GetComponent<Card>().data.cardType == CardTypes.ArenaEffect)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool IsSummon()
+    {
+        if (GetComponent<Card>().data.cardType == CardTypes.Summon)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool IsArcaneSpellbookDown()
+    {
+        var cardsOnBoard = GameManager.instance.cardsOnBoard;
+        bool isDown = false;
+        for (int i = 0; i < cardsOnBoard.Count; i++)
+        {
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Arcane Spellbook")
+            {
+                isDown = true;
+            }
+        }
+        return isDown;
     }
 }

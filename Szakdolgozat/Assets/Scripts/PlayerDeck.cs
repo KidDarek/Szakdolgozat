@@ -70,7 +70,7 @@ public class PlayerDeck : MonoBehaviour
         deck.Remove(deck[0]);
     }
 
-    public void CreateToken(CardDataSo data) 
+    public void CreateCard(CardDataSo data) 
     {
         var card = Instantiate(data.prefab, hand);
         card.GetComponent<Card>().data = data;

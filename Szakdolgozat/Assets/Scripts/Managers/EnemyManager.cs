@@ -6,7 +6,6 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
     public ClassDataSo enemyData;
-    public EnemyDeck enemyDeck;
 
 
     void Awake()
@@ -15,6 +14,7 @@ public class EnemyManager : MonoBehaviour
         enemyData.currentHp = enemyData.maxHp;
         enemyData.currentAp = 2;
         enemyData.currentRap = enemyData.maxRap;
+        enemyData.shield = 0;
         enemyData.Decker();
     }
 }

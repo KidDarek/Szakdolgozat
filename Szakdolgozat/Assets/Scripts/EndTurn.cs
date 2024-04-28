@@ -44,10 +44,10 @@ public class EndTurn : MonoBehaviour
         GameManager.instance.heroData.attackDmgBonus -= GameManager.instance.tempAttackBonus[0];
         GameManager.instance.heroData.spellDmgBonus -= GameManager.instance.tempAttackBonus[1];
         GameManager.instance.ResetTempAttack();
+        enemyAi.ResetEnemy();
         GameManager.instance.EndTurnEffect();
         GameManager.instance.strikeCount = 0;
         transform.GetComponent<SpriteRenderer>().color = Color.red;
-        enemyAi.ResetEnemy();
         StartCoroutine(EnemyTurn());
     }
 

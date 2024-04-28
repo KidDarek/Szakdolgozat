@@ -67,13 +67,26 @@ public class Spell : MonoBehaviour
             return;
         }
         NormalDamageCheck(data);
+        if (IsBobDown())
+        {
+            ShieldCheck(2);
+        }
+        if (IsHarlyDown())
+        {
+            ShieldCheck(2);
+        }
 
 
     }
 
     void NormalDamageCheck(CardDataSo data)
     {
-        if (data.dmgType == DamageType.Physical)
+        if (IsSorcefullDown())
+        {
+            ShieldCheck(data.dmg + GameManager.instance.heroData.attackDmgBonus 
+                + GameManager.instance.heroData.spellDmgBonus);
+        }
+        else if (data.dmgType == DamageType.Physical)
         {
             ShieldCheck(data.dmg + GameManager.instance.heroData.attackDmgBonus);
         }
@@ -100,7 +113,7 @@ public class Spell : MonoBehaviour
         int shieldDmg = GameManager.instance.shieldDmg;
         if (EnemyManager.instance.enemyData.shield != 0)
         {
-            if (dmg + shieldDmg < EnemyManager.instance.enemyData.shield)
+            if (dmg + shieldDmg <= EnemyManager.instance.enemyData.shield)
             {
                 EnemyManager.instance.enemyData.shield -= shieldDmg;
             }
@@ -128,6 +141,10 @@ public class Spell : MonoBehaviour
             return;
         }
         EnemyManager.instance.enemyData.currentHp -= dmg;
+        if (IsStromDown())
+        {
+            EnemyManager.instance.enemyData.currentHp--;
+        }
     }
 
     public void DrawCards()
@@ -152,13 +169,68 @@ public class Spell : MonoBehaviour
         GameManager.instance.heroData.shield += data.hp;
     }
 
-    public void Heal()
+    public void Heal(CardDataSo data)
     {
         if (!data.isHealing)
         {
             return;
         }
-        GameManager.instance.heroData.currentHp += data.dmg + GameManager.instance.heroData.spellDmgBonus;
+        GameManager.instance.heroData.RestoreHealth(data.dmg + GameManager.instance.heroData.spellDmgBonus);
+    }
+
+    bool IsSorcefullDown()
+    {
+        var board = GameManager.instance.cardsOnBoard;
+        bool isDown = false;
+        for (int i = 0; i < board.Count; i++)
+        {
+            if (board[i].GetComponent<Card>().data.cardName == "Sorcefull Staff")
+            {
+                isDown = true;
+            }
+        }
+        return isDown;
+    }
+
+    bool IsStromDown()
+    {
+        var board = GameManager.instance.cardsOnBoard;
+        bool isDown = false;
+        for (int i = 0; i < board.Count; i++)
+        {
+            if (board[i].GetComponent<Card>().data.cardName == "The Storm")
+            {
+                isDown = true;
+            }
+        }
+        return isDown;
+    }
+    bool IsBobDown()
+    {
+        var board = GameManager.instance.cardsOnBoard;
+        bool isDown = false;
+        for (int i = 0; i < board.Count; i++)
+        {
+            if (board[i].GetComponent<Card>().data.cardName == "Bob")
+            {
+                isDown = true;
+            }
+        }
+        return isDown;
+    }
+
+    bool IsHarlyDown()
+    {
+        var board = GameManager.instance.cardsOnBoard;
+        bool isDown = false;
+        for (int i = 0; i < board.Count; i++)
+        {
+            if (board[i].GetComponent<Card>().data.cardName == "Harly")
+            {
+                isDown = true;
+            }
+        }
+        return isDown;
     }
 
     private void OnDisable()

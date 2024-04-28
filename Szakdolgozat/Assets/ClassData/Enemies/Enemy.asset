@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10
   currentHp: 10
-  shield: 10
+  shield: 0
   maxAp: 4
   currentAp: 0
   apRegain: 2

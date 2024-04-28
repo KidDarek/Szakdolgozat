@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PaladinSpells : Spell
+public class PaladnSpells : Spell
 {
     CardDataSo pData;
 
     void Start()
     {
         pData = GetComponent<Card>().data;
-        GetComponent<CardAction>().onCardPlayed += OnNinjaCardPlayed;
+        GetComponent<CardAction>().onCardPlayed += OnPaladinCardPlayed;
     }
 
-    void OnNinjaCardPlayed()
+    void OnPaladinCardPlayed()
     {
         Provoke();
         HolyBlock();
@@ -37,17 +37,17 @@ public class PaladinSpells : Spell
             return;
         }
         GameManager.instance.heroData.shield += 5;
-        GameManager.instance.tempAttackBonus[1] += 2;
+        GameManager.instance.tempAttackBonus[1] += pData.dmg;
     }
 
     void ShieldThrow() 
     {
-        if (pData.cardName != "Shieldthrow")
+        if (pData.cardName != "Shield Throw")
         {
             return;
         }
         pData.dmg += GameManager.instance.heroData.shield;
-        DealDamage(pData);
+        ShieldCheck(pData.dmg);
         pData.dmg -= GameManager.instance.heroData.shield;
     }
 

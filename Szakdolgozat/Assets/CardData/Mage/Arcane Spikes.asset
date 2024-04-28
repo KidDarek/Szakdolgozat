@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fdff44ea8c10394380a224da1cbd11c, type: 3}
+  m_Name: Arcane Spikes
+  m_EditorClassIdentifier: 
+  hp: 0
+  dmg: 1
+  draws: 0
+  cost: 1
+  isActionCost: 1
+  isHealing: 0
+  cardName: Arcane Spikes
+  description: deal 1 + magic dmg 3 times
+  dmgType: 1
+  cardType: 0
+  prefab: {fileID: 874573812113703234, guid: af20dc806d752cb48a87226b912262c2, type: 3}

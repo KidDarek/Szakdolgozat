@@ -20,7 +20,7 @@ public class CardSlot : MonoBehaviour
             && MovementManager.instance.isCardDragged
             && GameManager.instance.IsCardPlayable(MovementManager.instance.selectedCard.GetComponent<Card>().data)
             && isSpaceOpen
-            && MovementManager.instance.selectedCard.GetComponent<Card>().data.cardType == CardTypes.Equipment)
+            && IsSummonOrEquipment())
         {
             MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
             GameManager.instance.cardsOnBoard.Add(MovementManager.instance.selectedCard);
@@ -36,7 +36,7 @@ public class CardSlot : MonoBehaviour
             && MovementManager.instance.isCardDragged
             && GameManager.instance.IsCardPlayable(MovementManager.instance.selectedCard.GetComponent<Card>().data)
             && !isSpaceOpen
-            && MovementManager.instance.selectedCard.GetComponent<Card>().data.cardType == CardTypes.Equipment)
+            && IsSummonOrEquipment())
         {
             ReplaceEquipment();
         }
@@ -45,6 +45,17 @@ public class CardSlot : MonoBehaviour
     {
         Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         return g.GetComponent<Collider2D>().OverlapPoint(point);
+    }
+
+    bool IsSummonOrEquipment() 
+    {
+        bool isIt = false;
+        if (MovementManager.instance.selectedCard.GetComponent<Card>().data.cardType == CardTypes.Equipment
+            || MovementManager.instance.selectedCard.GetComponent<Card>().data.cardType == CardTypes.Summon)
+        {
+            isIt = true;
+        }
+        return isIt;
     }
 
     void LeftOrRightSlot(GameObject card)

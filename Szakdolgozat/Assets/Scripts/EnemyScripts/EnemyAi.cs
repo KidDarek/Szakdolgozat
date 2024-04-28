@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class EnemyAi : MonoBehaviour
@@ -21,14 +20,14 @@ public class EnemyAi : MonoBehaviour
     {
         for (int i = 0; i < cards; i++)
         {
-            if (data.currentHp < 5 && data.currentRap > 0)
+            if (data.currentHp < 7 && data.currentRap > 0)
             {
                 data.currentHp += 2;
                 data.currentRap -= 1;
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);
             }
-            else if (data.currentHp >= 8 && data.currentRap > 0 && data.shield < 10)
+            else if (data.currentHp >= 6 && data.currentRap > 0 && data.shield < 10)
             {
                 data.shield += 1;
                 data.currentRap -= 1;
@@ -37,7 +36,7 @@ public class EnemyAi : MonoBehaviour
             }
             else if (data.currentAp != 0)
             {
-                ShieldCheck(2);
+                ShieldCheck(1);
                 data.currentAp--;
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);
@@ -82,6 +81,22 @@ public class EnemyAi : MonoBehaviour
                 GameManager.instance.heroData.shield--;
 
             }
+            //Paladin Arena effect
+            var board = GameManager.instance.cardsOnBoard;
+            for (int i = 0; i < board.Count; i++)
+            {
+                if (dmg > GameManager.instance.heroData.shield && board[i].GetComponent<Card>().data.cardName == "Mountain Stance")
+                {
+                    GameManager.instance.heroData.shield++;
+                }
+                // Ranger AE
+                if (board[i].GetComponent<Card>().data.cardName == "Hunters Trap")
+                {
+                    GameManager.instance.DmgCheck(1);
+                }
+
+            }
+
             return;
         }
         GameManager.instance.heroData.currentHp -= dmg;

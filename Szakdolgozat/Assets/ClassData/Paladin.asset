@@ -26,3 +26,10 @@ MonoBehaviour:
   characterKlass: 0
   weapon: 0
   prefab: {fileID: 3605123740647794360, guid: 7889f1ce872290f4dad229f5a5cc458c, type: 3}
+  baseDeck:
+  - {fileID: 11400000, guid: d41ec0622b45ebe4fafc1171ddd20fcc, type: 2}
+  - {fileID: 11400000, guid: 4eb0b98e57f77cb478b8b3f67e511729, type: 2}
+  - {fileID: 11400000, guid: ddf2226dce34bb84b92cb74020f5125a, type: 2}
+  - {fileID: 11400000, guid: b56e1058a2d4fa14886cbade87547e1c, type: 2}
+  - {fileID: 11400000, guid: 3d5cc95135fdf38468f4775afd51337d, type: 2}
+  deck: []

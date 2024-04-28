@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,8 +14,10 @@ public class GameManager : MonoBehaviour
     public int[] tempAttackBonus = {0,0};
     public int strikeCount = 0;
     public int shieldDmg = 1;
-    [SerializeField] List<CardDataSo> Tokens;
+    public List<CardDataSo> tokens;
     public bool tokenDmgOn;
+    public bool meditationOn;
+    public bool firstPotionOn;
 
     int startingAp = 3;
     void Awake()
@@ -30,6 +34,8 @@ public class GameManager : MonoBehaviour
         heroData.attackDmgBonus = 0;
         heroData.spellDmgBonus = 0;
         tokenDmgOn = false;
+        meditationOn = false;
+        firstPotionOn = false;
     }
     public void SpendActionOrReaction() 
     {
@@ -68,12 +74,70 @@ public class GameManager : MonoBehaviour
         {
             if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Kunai")
             {
-                playerDeck.CreateToken(Tokens[0]);
+                playerDeck.CreateCard(tokens[0]);
             }
             if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Paladin Shield")
             {
                 heroData.shield++;
             }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Crossbow")
+            {
+                heroData.currentAp++;
+            }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Wind Swept Hills")
+            {
+                playerDeck.PutCardInHand();
+            }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Druid Staff")
+            {
+                heroData.RestoreHealth(1 + heroData.spellDmgBonus);
+            }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Forest Of Favours")
+            {
+                heroData.currentAp++;
+                heroData.RestoreHealth(1 + heroData.spellDmgBonus);
+            }
+            if (meditationOn)
+            {
+                heroData.currentAp += 2;
+                tempAttackBonus[1] += 3;
+                heroData.spellDmgBonus += 3;
+                meditationOn = false;
+            }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Alchemist Gloves")
+            {
+                CreatePotion();
+                firstPotionOn = true;
+            }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Potion Launcher")
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    System.Random rnd = new System.Random();
+                    int tokenNum = rnd.Next(1, 6);
+                    switch (tokenNum)
+                    {
+                        case 1:
+                            EnemyManager.instance.enemyData.shield--;
+                            break;
+                        case 2:
+                            DmgCheck(1);
+                            break;
+                        case 3:
+                            heroData.currentHp++;
+                            break;
+                        case 4:
+                            heroData.currentAp++;
+                            break;
+                        case 5:
+                            playerDeck.PutCardInHand();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
         }
     }
 
@@ -86,9 +150,16 @@ public class GameManager : MonoBehaviour
                 GameManager.instance.strikeCount++;
                 DmgCheck(strikeCount);
             }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Visous Veins")
+            {
+                EnemyManager.instance.enemyData.currentAp--;
+            }
+            if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "The Graveyard")
+            {
+                heroData.shield += 2;
+            }
         }
         tokenDmgOn = false;
-
     }
     public void DmgCheck(int dmg)
     {
@@ -106,6 +177,13 @@ public class GameManager : MonoBehaviour
             return;
         }
         EnemyManager.instance.enemyData.currentHp -= dmg;
+    }
+
+    public void CreatePotion() 
+    {
+        System.Random rnd = new System.Random();
+        int tokenNum = rnd.Next(1, 6);
+        playerDeck.CreateCard(tokens[tokenNum]);
     }
 }
 
