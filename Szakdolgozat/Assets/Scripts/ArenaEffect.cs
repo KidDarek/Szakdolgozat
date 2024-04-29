@@ -41,32 +41,32 @@ public class ArenaEffect : CardSlot
             ReplaceArena();
         }
 
-        bool IsTouchingMouse(GameObject g)
-        {
-            Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            return g.GetComponent<Collider2D>().OverlapPoint(point);
-        }
+       
+    }
+    bool IsTouchingMouse(GameObject g)
+    {
+        Vector2 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return g.GetComponent<Collider2D>().OverlapPoint(point);
+    }
 
-        void ReplaceArena()
+    void ReplaceArena()
+    {
+        for (int i = 0; i < GameManager.instance.cardsOnBoard.Count; i++)
         {
-            for (int i = 0; i < GameManager.instance.cardsOnBoard.Count; i++)
+            if (arenaEffect != GameManager.instance.cardsOnBoard[i])
             {
-                if (arenaEffect != GameManager.instance.cardsOnBoard[i])
-                {
-                    return;
-                }
-                MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
-                GameManager.instance.playerDeck.AddCardToDeadDeck
-                    (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data);
-                Destroy(GameManager.instance.cardsOnBoard[i]);
-                GameManager.instance.cardsOnBoard.Remove(GameManager.instance.cardsOnBoard[i]);
-                MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
-                GameManager.instance.cardsOnBoard.Add(MovementManager.instance.selectedCard);
-                arenaEffect = MovementManager.instance.selectedCard;
-                MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
-                GameManager.instance.SpendActionOrReaction();
-                MovementManager.instance.isCardDragged = false;
+                return;
             }
+            MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
+            GameManager.instance.playerDeck.AddCardToDeadDeck
+                (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data);
+            Destroy(GameManager.instance.cardsOnBoard[i]);
+            GameManager.instance.cardsOnBoard[i] = MovementManager.instance.selectedCard;
+            arenaEffect = MovementManager.instance.selectedCard;
+            MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
+            MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
+            GameManager.instance.SpendActionOrReaction();
+            MovementManager.instance.isCardDragged = false;
         }
     }
 }

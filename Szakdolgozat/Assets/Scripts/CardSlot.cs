@@ -81,10 +81,8 @@ public class CardSlot : MonoBehaviour
                     (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data);
                 Destroy(GameManager.instance.cardsOnBoard[i]);
                 RemoveEqupmentDmgBonus(GameManager.instance.cardsOnBoard[i]);
-                GameManager.instance.cardsOnBoard.Remove(GameManager.instance.cardsOnBoard[i]);
-                boardSlots[0] = null;
+                GameManager.instance.cardsOnBoard[i] = MovementManager.instance.selectedCard;
                 MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
-                GameManager.instance.cardsOnBoard.Add(MovementManager.instance.selectedCard);
                 boardSlots[0] = MovementManager.instance.selectedCard;
                 MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
                 GameManager.instance.SpendActionOrReaction();
@@ -97,10 +95,8 @@ public class CardSlot : MonoBehaviour
                     (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data);
                 Destroy(GameManager.instance.cardsOnBoard[i]);
                 RemoveEqupmentDmgBonus(GameManager.instance.cardsOnBoard[i]);
-                GameManager.instance.cardsOnBoard.Remove(GameManager.instance.cardsOnBoard[i]);
-                boardSlots[1] = null;
+                GameManager.instance.cardsOnBoard[i] = MovementManager.instance.selectedCard;
                 MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
-                GameManager.instance.cardsOnBoard.Add(MovementManager.instance.selectedCard);
                 boardSlots[1] = MovementManager.instance.selectedCard;
                 MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
                 GameManager.instance.SpendActionOrReaction();
