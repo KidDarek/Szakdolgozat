@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
         tokenDmgOn = false;
         meditationOn = false;
         firstPotionOn = false;
+        heroData.deck.Clear();
+        heroData.Decker();
     }
     public void SpendActionOrReaction() 
     {
