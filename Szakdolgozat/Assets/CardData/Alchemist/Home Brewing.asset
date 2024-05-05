@@ -15,11 +15,11 @@ MonoBehaviour:
   hp: 0
   dmg: 0
   draws: 0
-  cost: 2
-  isActionCost: 0
+  cost: 1
+  isActionCost: 1
   isHealing: 0
   cardName: Home Brewing
-  description: 
+  description: Create 2 random potions in hand
   dmgType: 2
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: c881b69f5fd31f847817b719696c7eae, type: 3}

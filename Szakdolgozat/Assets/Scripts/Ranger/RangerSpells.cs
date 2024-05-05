@@ -24,7 +24,8 @@ public class RangerSpells : Spell
         {
             return;
         }
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 4 + GameManager.instance.heroData.attackDmgBonus 
+            + GameManager.instance.heroData.spellDmgBonus; i++)
         {
             ShieldCheck(1);
         }

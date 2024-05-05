@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NewCardManager : MonoBehaviour
@@ -53,6 +54,18 @@ public class NewCardManager : MonoBehaviour
         }
         for (int i = cardnum; i < cardnum + 4; i++)
         {
+            print(cards[i].cardName);
+            if (cards[i].isActionCost)
+            {
+                cards[i].prefab.transform.Find("price").GetComponent<TextMeshPro>().text = string.Concat(cards[i].cost) + " ap";
+            }
+            else
+            {
+                cards[i].prefab.transform.Find("price").GetComponent<TextMeshPro>().text = string.Concat(cards[i].cost) + " rp";
+            }
+            cards[i].prefab.transform.Find("Desc").GetComponent<TextMeshPro>().text = string.Concat(cards[i].description);
+            cards[i].prefab.transform.Find("dmg").GetComponent<TextMeshPro>().text = string.Concat(cards[i].dmg);
+            cards[i].prefab.transform.Find("Type").GetComponent<TextMeshPro>().text = string.Concat(cards[i].cardType);
             var card = Instantiate(cards[i].prefab, parent);
             card.GetComponent<Card>().data = cards[i];
             card.AddComponent<CardChoices>();

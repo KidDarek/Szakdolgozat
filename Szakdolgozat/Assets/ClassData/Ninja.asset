@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76939a228a69cfd4eab7f9e7ca0a764c, type: 3}
   m_Name: Ninja
   m_EditorClassIdentifier: 
-  maxHp: 10
-  currentHp: 10
+  maxHp: 20
+  currentHp: 20
   shield: 0
   maxAp: 6
   currentAp: 3
@@ -32,5 +32,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 011d2d3c6d60db24e976e7805bdc41be, type: 2}
   - {fileID: 11400000, guid: 95fad92fa1b75d7448ed6409d24127bb, type: 2}
   - {fileID: 11400000, guid: 6751cd3f795833e479be1ea0388f6dd4, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
   - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  deck: []
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  deck:
+  - {fileID: 11400000, guid: c6f3b0caf0a10a54795168f03725b36e, type: 2}
+  - {fileID: 11400000, guid: 011d2d3c6d60db24e976e7805bdc41be, type: 2}
+  - {fileID: 11400000, guid: 6751cd3f795833e479be1ea0388f6dd4, type: 2}
+  - {fileID: 11400000, guid: 011d2d3c6d60db24e976e7805bdc41be, type: 2}
+  - {fileID: 11400000, guid: 011d2d3c6d60db24e976e7805bdc41be, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 95fad92fa1b75d7448ed6409d24127bb, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 011d2d3c6d60db24e976e7805bdc41be, type: 2}

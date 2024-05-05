@@ -44,7 +44,6 @@ public class WarriorSpells : Spell
         {
             GameManager.instance.strikeCount++;
             DealDamage(wData);
-            GameManager.instance.heroData.currentAp--;
         }
     }
 

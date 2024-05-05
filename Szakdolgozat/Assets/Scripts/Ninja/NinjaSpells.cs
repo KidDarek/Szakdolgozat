@@ -14,7 +14,7 @@ public class NinjaSpells : Spell
         nData = GetComponent<Card>().data;
         dmg = nData.dmg;
         GetComponent<CardAction>().onCardPlayed += OnNinjaCardPlayed;
-        daggerDmgBonus = 1;
+        daggerDmgBonus = 2;
     }
 
     void OnNinjaCardPlayed()
@@ -27,7 +27,6 @@ public class NinjaSpells : Spell
     // Warior Spells
     void Dagger()
     {
-        print(GameManager.instance.tokenDmgOn);
         if (nData.cardName != "Dagger")
         {
             return;
@@ -46,7 +45,7 @@ public class NinjaSpells : Spell
         {
             return;
         }
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             GameManager.instance.playerDeck.CreateCard(token);
         }
@@ -59,7 +58,7 @@ public class NinjaSpells : Spell
             return;
         }
         GameManager.instance.tokenDmgOn = true;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 4; i++)
         {
             GameManager.instance.playerDeck.CreateCard(token);
         }

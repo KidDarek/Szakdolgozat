@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 0
   isHealing: 0
   cardName: Fire
-  description: Deal 2 dmg
+  description: Deal 1 dmg
   dmgType: 1
   cardType: 4
   prefab: {fileID: 874573812113703234, guid: cc80f4bc6eae23d4681898e51bafd68a, type: 3}

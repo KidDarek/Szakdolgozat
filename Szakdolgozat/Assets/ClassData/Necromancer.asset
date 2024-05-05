@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76939a228a69cfd4eab7f9e7ca0a764c, type: 3}
   m_Name: Necromancer
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 20
   currentHp: 4
   shield: 0
   maxAp: 6
@@ -33,6 +33,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c911f32efdbcc74382e86639c561e68, type: 2}
   - {fileID: 11400000, guid: 22641381107bbd1419f8ba04a6bc0d00, type: 2}
   - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: 7f823d3f4908af848ba4e5f9ab2201b6, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
   deck:
   - {fileID: 11400000, guid: 7f823d3f4908af848ba4e5f9ab2201b6, type: 2}

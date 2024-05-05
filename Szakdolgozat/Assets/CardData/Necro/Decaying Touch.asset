@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Decaying Touch
   m_EditorClassIdentifier: 
   hp: 0
-  dmg: 2
+  dmg: 3
   draws: 0
   cost: 2
   isActionCost: 1
-  isHealing: 0
+  isHealing: 1
   cardName: Decaying Touch
-  description: Deal 2 dmg and heal for it
+  description: Deal 3 dmg and heal for it
   dmgType: 1
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: 6c0576e4daf18cb4b9b5c5b0e7630cb9, type: 3}

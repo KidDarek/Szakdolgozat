@@ -14,10 +14,10 @@ public class EndTurn : MonoBehaviour
 
         GameManager.instance.isPlayerTurn = true;
 
+        GameManager.instance.StartTurnEffect();
+
         GameManager.instance.heroData.RestoreAp();
         GameManager.instance.heroData.RestoreRap();
-
-        GameManager.instance.StartTurnEffect();
 
         transform.GetComponent<SpriteRenderer>().color = Color.green;
     }

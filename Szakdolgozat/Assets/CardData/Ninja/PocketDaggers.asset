@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Pocket Daggers
-  description: Create 3 daggers
+  description: Create 2 daggers
   dmgType: 0
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: 9a6a7627e21432546bb077b24b8f6714, type: 3}

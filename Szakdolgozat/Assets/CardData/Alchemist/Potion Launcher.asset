@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Potion Launcher
-  description: 
+  description: 1 bonus magic dmg. At the start of the turn play 3 random potions
   dmgType: 1
   cardType: 1
   prefab: {fileID: 874573812113703234, guid: 2a10e01774909ee4383ed88c66ab504a, type: 3}

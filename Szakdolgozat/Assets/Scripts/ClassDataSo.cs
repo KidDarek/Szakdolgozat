@@ -48,7 +48,7 @@ public class ClassDataSo : ScriptableObject
         currentHp += health;
         SetToMax();
     }
-    void SetToMax()
+    public void SetToMax()
     {
         if (currentAp > maxAp)
         {
@@ -57,6 +57,10 @@ public class ClassDataSo : ScriptableObject
         if (currentHp > maxHp)
         {
             currentHp = maxHp;
+        }
+        if (shield > maxHp)
+        {
+            shield = maxHp;
         }
     }
     public void Decker()

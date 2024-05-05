@@ -18,7 +18,7 @@ MonoBehaviour:
   cost: 3
   isActionCost: 0
   isHealing: 1
-  cardName: Forest Of Favors
+  cardName: Forest Of Favours
   description: heal and gain ap
   dmgType: 1
   cardType: 2

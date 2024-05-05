@@ -55,18 +55,24 @@ public class ArenaEffect : CardSlot
         {
             if (arenaEffect != GameManager.instance.cardsOnBoard[i])
             {
+                print("asd");
+                print(GameManager.instance.cardsOnBoard[i].name);
                 return;
             }
+            print(arenaEffect.name);
+            print(GameManager.instance.cardsOnBoard[i].name);
             MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
             GameManager.instance.playerDeck.AddCardToDeadDeck
                 (GameManager.instance.cardsOnBoard[i].GetComponent<Card>().data);
             Destroy(GameManager.instance.cardsOnBoard[i]);
             GameManager.instance.cardsOnBoard[i] = MovementManager.instance.selectedCard;
-            arenaEffect = MovementManager.instance.selectedCard;
             MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
             MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
             GameManager.instance.SpendActionOrReaction();
             MovementManager.instance.isCardDragged = false;
+            break;
         }
+        arenaEffect = MovementManager.instance.selectedCard;
+        print(arenaEffect.name);
     }
 }

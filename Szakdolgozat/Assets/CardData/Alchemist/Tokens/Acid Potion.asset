@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Acid
-  description: Deytroy 3 armor
+  description: Deytroy 1 armor
   dmgType: 2
   cardType: 4
   prefab: {fileID: 874573812113703234, guid: c2d15adbf530fe64bad11f72ae5faa76, type: 3}

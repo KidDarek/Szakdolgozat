@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Visous Veins
-  description: Reduce Enemy actin points by 1
+  description: Reduce Enemy actin points by 1 and destroy 2 shields
   dmgType: 2
   cardType: 2
   prefab: {fileID: 874573812113703234, guid: d831afcb448a46d43923cb5a3b995c0e, type: 3}

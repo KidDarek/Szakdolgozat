@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76939a228a69cfd4eab7f9e7ca0a764c, type: 3}
   m_Name: Paladin
   m_EditorClassIdentifier: 
-  maxHp: 10
-  currentHp: 10
-  shield: 0
+  maxHp: 20
+  currentHp: 20
+  shield: 10
   maxAp: 6
   currentAp: 3
   apRegain: 3
   maxRap: 3
   currentRap: 3
   attackDmgBonus: 0
-  spellDmgBonus: 0
+  spellDmgBonus: -2
   sprite: {fileID: 0}
   characterKlass: 0
   weapon: 0
@@ -32,4 +32,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ddf2226dce34bb84b92cb74020f5125a, type: 2}
   - {fileID: 11400000, guid: b56e1058a2d4fa14886cbade87547e1c, type: 2}
   - {fileID: 11400000, guid: 3d5cc95135fdf38468f4775afd51337d, type: 2}
-  deck: []
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  deck:
+  - {fileID: 11400000, guid: ddf2226dce34bb84b92cb74020f5125a, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}

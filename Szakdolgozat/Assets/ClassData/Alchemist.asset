@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76939a228a69cfd4eab7f9e7ca0a764c, type: 3}
   m_Name: Alchemist
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 20
   currentHp: 8
   shield: 0
   maxAp: 6
@@ -32,4 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 97e65305a4f9def47b5e98e132581fee, type: 2}
   - {fileID: 11400000, guid: 1ec3c8d00f3e1874db9ccc245d8e2a5a, type: 2}
   - {fileID: 11400000, guid: 6871992b3cfc79a4d837711d960657ab, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
   deck: []

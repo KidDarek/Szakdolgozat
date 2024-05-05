@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Dagger
-  description: Dagger
+  description: Deal 1 dmg
   dmgType: 0
   cardType: 4
   prefab: {fileID: 874573812113703234, guid: 3a34bd10ccaf04345aa50075790aba48, type: 3}

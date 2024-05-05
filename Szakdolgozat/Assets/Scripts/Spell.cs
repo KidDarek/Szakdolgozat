@@ -110,6 +110,10 @@ public class Spell : MonoBehaviour
 
     public void ShieldCheck(int dmg)
     {
+        if (EnemyManager.instance.enemyData.shield < 0)
+        {
+            EnemyManager.instance.enemyData.shield = 0;
+        }
         int shieldDmg = GameManager.instance.shieldDmg;
         if (EnemyManager.instance.enemyData.shield != 0)
         {

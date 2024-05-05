@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Sharp Daggers
-  description: Generate 5 daggers and increase the dmg of them to 4
+  description: Generate 4 daggers and increase the dmg of them to 3
   dmgType: 0
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: 0d5f9472787eae24a9547a0f1adb9bf4, type: 3}

@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Bob
-  description: Warrior Skelly boyo
+  description: Gives 3 physical dmg to the hero and hit for 2 when you strike
   dmgType: 0
   cardType: 3
   prefab: {fileID: 874573812113703234, guid: 1dc1938cee03ba249a77028493fc8cc9, type: 3}

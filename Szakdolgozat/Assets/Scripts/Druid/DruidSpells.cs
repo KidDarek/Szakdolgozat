@@ -18,7 +18,7 @@ public class DruidSpells : Spell
         Meditation();
     }
 
-    // Warior Spells
+
     void WoodlandMending()
     {
         if (dData.cardName != "Woodland Mending")
@@ -26,6 +26,7 @@ public class DruidSpells : Spell
             return;
         }
         Heal(dData);
+        DealDamage(dData);
     }
     void Meditation()
     {

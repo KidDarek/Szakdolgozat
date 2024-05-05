@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -155,6 +154,11 @@ public class GameManager : MonoBehaviour
             if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "Visous Veins")
             {
                 EnemyManager.instance.enemyData.currentAp--;
+                EnemyManager.instance.enemyData.shield -= 2;
+                if (EnemyManager.instance.enemyData.shield < 0)
+                {
+                    EnemyManager.instance.enemyData.shield = 0;
+                }
             }
             if (cardsOnBoard[i].GetComponent<Card>().data.cardName == "The Graveyard")
             {

@@ -17,8 +17,9 @@ MonoBehaviour:
   draws: 0
   cost: 1
   isActionCost: 1
+  isHealing: 0
   cardName: Strike
-  description: hit
+  description: Strike for 1
   dmgType: 0
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: af0c92db7037e03478cc78b4972a2f4c, type: 3}

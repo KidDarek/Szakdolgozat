@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAi : MonoBehaviour
 {
     ClassDataSo data;
     [SerializeField] CardDataSo prefab;
+    [SerializeField] Transform left;
+    [SerializeField] Transform right;
+    bool leftOpen;
+    bool rightOpen;
+    int boost;
+
     int cards = 5;
     void Start()
     {
+        leftOpen = true;
+        rightOpen = true;
         data = EnemyManager.instance.enemyData;
         for (int i = 0; i < cards; i++)
         {
             PutCardInHand();
+        }
+        boost = StaticData.fightNumber;
+        data.maxHp += boost*5;
+        data.maxAp += boost/3;
+        data.maxRap += boost/3;
+        cards += boost/3;
+        data.currentHp = data.maxHp;
+    }
+    private void Update()
+    {
+        if (data.shield < 0)
+        {
+            data.shield = 0;
         }
     }
 
@@ -20,23 +42,52 @@ public class EnemyAi : MonoBehaviour
     {
         for (int i = 0; i < cards; i++)
         {
-            if (data.currentHp < 7 && data.currentRap > 0)
+            if (data.currentAp != 0 
+                && GameManager.instance.heroData.currentHp < (1 + data.attackDmgBonus)* data.currentAp
+                && GameManager.instance.heroData.shield < 3)
+            {
+                ShieldCheck(1 + data.attackDmgBonus);
+                data.currentAp--;
+                var card = transform.GetChild(i);
+                Destroy(card.gameObject);
+            }
+            else if (data.currentHp < 10 && data.currentRap > 0)
             {
                 data.currentHp += 2;
                 data.currentRap -= 1;
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);
             }
-            else if (data.currentHp >= 6 && data.currentRap > 0 && data.shield < 10)
+            else if (data.currentHp >= 16 && data.currentRap > 1 && data.shield < data.maxHp)
             {
-                data.shield += 1;
-                data.currentRap -= 1;
+                data.shield += 2;
+                data.currentRap -= 2;
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);
             }
-            else if (data.currentAp != 0)
+            else if (data.currentAp > 1 && data.currentHp >16 && leftOpen && boost > 2)
             {
-                ShieldCheck(1);
+                data.attackDmgBonus += 2;
+                data.currentAp -= 2;
+                var card = transform.GetChild(i);
+                Destroy(card.gameObject);
+                var equip = Instantiate(prefab.prefab, left);
+                equip.transform.localScale = new Vector3(1f, 1f, 0f);
+                leftOpen = false;
+            }
+            else if (data.currentAp > 1 && data.currentHp > 16 && rightOpen && boost > 3)
+            {
+                data.attackDmgBonus += 2;
+                data.currentAp -= 2;
+                var card = transform.GetChild(i);
+                Destroy(card.gameObject);
+                var equip = Instantiate(prefab.prefab, right);
+                equip.transform.localScale = new Vector3(1f, 1f, 0f);
+                rightOpen = false;
+            }
+            else if (data.currentAp > 0)
+            {
+                ShieldCheck(1 + data.attackDmgBonus);
                 data.currentAp--;
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);
@@ -56,7 +107,7 @@ public class EnemyAi : MonoBehaviour
         {
             PutCardInHand();
         }
-        data.currentAp = 2;
+        data.currentAp = 2 + boost/3; ;
         data.currentRap = data.maxRap;
     }
 

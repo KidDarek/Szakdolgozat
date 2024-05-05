@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76939a228a69cfd4eab7f9e7ca0a764c, type: 3}
   m_Name: Warrior
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 20
   currentHp: 10
   shield: 0
   maxAp: 6
@@ -27,30 +27,15 @@ MonoBehaviour:
   weapon: 0
   prefab: {fileID: 874573812113703234, guid: 4fdf08fdc1e10c0498d8eb2022e788a5, type: 3}
   baseDeck:
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: 80e6a6c9b2de4344d9cc86743697f8c0, type: 2}
-  - {fileID: 11400000, guid: 80e6a6c9b2de4344d9cc86743697f8c0, type: 2}
-  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
-  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
-  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
-  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
-  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
-  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
-  - {fileID: 11400000, guid: ac2f452a39d1b7b4a9a6ce5f91221c28, type: 2}
   - {fileID: 11400000, guid: ac2f452a39d1b7b4a9a6ce5f91221c28, type: 2}
   - {fileID: 11400000, guid: 8bdec24ef1abe38449d789f3252a558d, type: 2}
-  - {fileID: 11400000, guid: 8bdec24ef1abe38449d789f3252a558d, type: 2}
-  - {fileID: 11400000, guid: f84c8f41551eec342a97ba48149d40f6, type: 2}
-  - {fileID: 11400000, guid: f84c8f41551eec342a97ba48149d40f6, type: 2}
   - {fileID: 11400000, guid: 56cf421cfa26b994fbf96b22e6f07457, type: 2}
-  - {fileID: 11400000, guid: 56cf421cfa26b994fbf96b22e6f07457, type: 2}
+  - {fileID: 11400000, guid: f84c8f41551eec342a97ba48149d40f6, type: 2}
   - {fileID: 11400000, guid: e85010c62ee81b7488a1696b331aa4c9, type: 2}
-  - {fileID: 11400000, guid: e85010c62ee81b7488a1696b331aa4c9, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
   deck:
   - {fileID: 11400000, guid: f84c8f41551eec342a97ba48149d40f6, type: 2}
   - {fileID: 11400000, guid: ac2f452a39d1b7b4a9a6ce5f91221c28, type: 2}

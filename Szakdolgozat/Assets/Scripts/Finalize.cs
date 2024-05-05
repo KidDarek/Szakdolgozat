@@ -8,6 +8,7 @@ public class Finalize : MonoBehaviour
     private void OnMouseUpAsButton()
     {
         StaticData.hero.baseDeck.Add(NewCardManager.instance.chosenCard);
+        StaticData.fightNumber++;
         NextScene();
     }
 

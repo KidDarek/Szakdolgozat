@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Arrow Volley
-  description: Hit the enemy 5 times
+  description: Hit the enemy 4 + magic & physic bonus dmg times
   dmgType: 0
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: 01fe561812f8cf14b9dc5fd3ef746cca, type: 3}

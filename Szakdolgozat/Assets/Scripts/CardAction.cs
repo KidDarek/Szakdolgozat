@@ -16,6 +16,11 @@ public class CardAction : MonoBehaviour
     public void PlayCard() 
     {
         onCardPlayed?.Invoke();
+        if (GameManager.instance.heroData.currentAp > GameManager.instance.heroData.maxAp 
+            || GameManager.instance.heroData.currentHp > GameManager.instance.heroData.maxHp)
+        {
+            GameManager.instance.heroData.SetToMax();
+        }
     }
 
     

@@ -15,11 +15,11 @@ MonoBehaviour:
   hp: 0
   dmg: 3
   draws: 0
-  cost: 1
+  cost: 2
   isActionCost: 1
   isHealing: 1
   cardName: Woodland Mending
-  description: Heals 3
+  description: Heals 3 and deals 3 dmg
   dmgType: 1
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: 8b683d56bf03aa24bad30b8581730d13, type: 3}

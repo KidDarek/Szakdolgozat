@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76939a228a69cfd4eab7f9e7ca0a764c, type: 3}
   m_Name: Ranger
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 20
   currentHp: -2
   shield: 0
   maxAp: 6
@@ -34,6 +34,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cef63f2ad6da5204ea3d144798fb343a, type: 2}
   - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
   - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
-  - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}
+  - {fileID: 11400000, guid: 9b0d866fc37ce0d48b06671feecf9355, type: 2}
+  - {fileID: 11400000, guid: 62ba040ceca97204aae69ad3b3706755, type: 2}
   deck:
   - {fileID: 11400000, guid: dbf8cb2f6316d6249b720736436de26c, type: 2}

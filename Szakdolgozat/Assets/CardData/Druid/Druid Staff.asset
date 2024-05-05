@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Druid Staff
   m_EditorClassIdentifier: 
   hp: 0
-  dmg: 1
+  dmg: 3
   draws: 0
-  cost: 1
+  cost: 2
   isActionCost: 1
   isHealing: 0
   cardName: Druid Staff
-  description: gain 1 spell dmg and heal at the start of the round
+  description: gain 3 spell dmg and heal at the start of the round
   dmgType: 1
   cardType: 1
   prefab: {fileID: 874573812113703234, guid: fc5195bccbeb4424a96c72baa8315b19, type: 3}

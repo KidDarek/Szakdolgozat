@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 0
   isHealing: 0
   cardName: Arcane Spellbook
-  description: 
+  description: 1 Magic Dmg, when you play a spell Draw 1
   dmgType: 1
   cardType: 1
   prefab: {fileID: 874573812113703234, guid: e8c86f55a3e9a4c4183a4c1c6b6a5439, type: 3}

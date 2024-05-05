@@ -19,7 +19,8 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 1
   cardName: Meditation
-  description: meditate
+  description: Draw one card and next turn give you 2 extra action points and 3 magic
+    dmg
   dmgType: 1
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: 455192a8c56f8ca4c97bbb321b214027, type: 3}

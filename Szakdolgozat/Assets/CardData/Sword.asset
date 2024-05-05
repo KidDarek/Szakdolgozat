@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Sword
-  description: Its a sword
+  description: Give 2 physical dmg bonus
   dmgType: 0
   cardType: 1
   prefab: {fileID: 874573812113703234, guid: cf500005bccd91a4da379a4542dbbe47, type: 3}

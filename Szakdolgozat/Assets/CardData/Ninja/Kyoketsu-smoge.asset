@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Kyoketsu-smoge
-  description: On card Play strike
+  description: 3 Physical Dmg, the turn play a strike
   dmgType: 0
   cardType: 1
   prefab: {fileID: 874573812113703234, guid: a6814531a6ebf2d4c998ae5fc4e1334a, type: 3}

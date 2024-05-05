@@ -12,6 +12,7 @@ public class CharacterSelector : MonoBehaviour
         klass.deck.Clear();
         klass.Decker();
         StaticData.hero = klass;
+        StaticData.fightNumber = 0;
         NextScene();
     }
     public void NextScene()

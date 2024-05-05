@@ -6,6 +6,7 @@ using UnityEngine;
 public class CardMovement : MonoBehaviour
 {
     bool selected;
+    int index;
     Transform parent;
     Quaternion defaultRotation;
 
@@ -13,6 +14,7 @@ public class CardMovement : MonoBehaviour
     void Start()
     {
         parent = transform.parent;
+        index = transform.GetSiblingIndex();
         MovementManager.instance.SelectedCardParent = parent;
         defaultRotation = Quaternion.Euler(0, 0, 0);
     }
@@ -20,7 +22,7 @@ public class CardMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!selected && !GameManager.instance.cardsOnBoard.Contains(gameObject) 
+        if (!selected && !GameManager.instance.cardsOnBoard.Contains(gameObject)
             || IsTouchingMouse(parent) && Input.GetMouseButtonUp(0) && !IsEquipment() && !IsAE() && !IsSummon())
         {
             MoveBack();
@@ -31,11 +33,13 @@ public class CardMovement : MonoBehaviour
             {
                 transform.GetComponent<CardAction>().PlayCard();
                 GameManager.instance.SpendActionOrReaction();
-                if (IsArcaneSpellbookDown())
+                if (IsArcaneSpellbookDown() 
+                    && MovementManager.instance.selectedCard.GetComponent<Card>().data.cardType == CardTypes.Spell)
                 {
                     GameManager.instance.playerDeck.PutCardInHand();
                 }
-                if (GameManager.instance.firstPotionOn)
+                if (GameManager.instance.firstPotionOn 
+                    && GetComponent<Card>().data.cardType == CardTypes.Token)
                 {
                     GameManager.instance.playerDeck.CreateCard(GetComponent<Card>().data);
                     GameManager.instance.firstPotionOn = false;
@@ -65,6 +69,7 @@ public class CardMovement : MonoBehaviour
     void MoveBack()
     {
         transform.SetParent(parent);
+        transform.SetSiblingIndex(index);
         MovementManager.instance.isCardSelected = false;
         transform.rotation = Quaternion.Lerp(transform.rotation, defaultRotation, Time.deltaTime * 10.0f);
 
@@ -78,6 +83,7 @@ public class CardMovement : MonoBehaviour
         }
         if (!GameManager.instance.cardsOnBoard.Contains(gameObject))
         {
+            index = transform.GetSiblingIndex();
             transform.SetParent(null);
             selected = true;
             MovementManager.instance.selectedCard = gameObject;
@@ -88,29 +94,35 @@ public class CardMovement : MonoBehaviour
             Quaternion rotationValue = Quaternion.Euler(mousePosition.y - transform.position.y * 2, -(mousePosition.x - transform.position.x * 2), 0);
 
             transform.position = Vector3.Lerp(transform.position, mousePosition, Time.deltaTime * 15.0f);
-            transform.position = new Vector3(transform.position.x, transform.position.y, -1.2f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z -1.2f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotationValue, Time.deltaTime * 15.0f);
         }
-        
+
     }
 
     private void OnMouseEnter()
     {
-        if (!MovementManager.instance.isCardSelected &&
-            !GameManager.instance.cardsOnBoard.Contains(gameObject))
+        if (!MovementManager.instance.isCardDragged 
+            && !GameManager.instance.cardsOnBoard.Contains(gameObject))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z);
+            parent.transform.position = new Vector3(MovementManager.instance.baseCords[0],
+                MovementManager.instance.baseCords[1] + 2.02f, MovementManager.instance.baseCords[2]);
         }
     }
     private void OnMouseExit()
     {
-        if (!MovementManager.instance.isCardSelected &&
-             !GameManager.instance.cardsOnBoard.Contains(gameObject))
+        if (!MovementManager.instance.isCardDragged
+             && !GameManager.instance.cardsOnBoard.Contains(gameObject))
         {
+            parent.transform.position = new Vector3(MovementManager.instance.baseCords[0],
+               MovementManager.instance.baseCords[1], MovementManager.instance.baseCords[2]);
+            index = transform.GetSiblingIndex();
             transform.SetParent(null);
             transform.SetParent(parent);
+            transform.SetSiblingIndex(index);
         }
     }
+
 
     bool IsTouchingMouse(Transform g)
     {

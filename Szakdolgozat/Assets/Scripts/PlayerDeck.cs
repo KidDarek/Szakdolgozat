@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerDeck : MonoBehaviour
@@ -35,7 +34,7 @@ public class PlayerDeck : MonoBehaviour
 
         if (GameManager.instance.isPlayerTurn && !alreadyDrawn)
         {
-           PutCardInHand();
+            PutCardInHand();
             alreadyDrawn = true;
         }
 
@@ -62,11 +61,22 @@ public class PlayerDeck : MonoBehaviour
 
     public void PutCardInHand()
     {
-        if (deck.Count == 0)
+        if (deck.Count == 0 || hand.childCount >= 10)
         {
             return;
         }
         var data = deck[0];
+        if (data.isActionCost)
+        {
+            data.prefab.transform.Find("price").GetComponent<TextMeshPro>().text = string.Concat(data.cost) + " ap";
+        }
+        else
+        {
+            data.prefab.transform.Find("price").GetComponent<TextMeshPro>().text = string.Concat(data.cost) + " rp";
+        }
+        data.prefab.transform.Find("Desc").GetComponent<TextMeshPro>().text = string.Concat(data.description);
+        data.prefab.transform.Find("dmg").GetComponent<TextMeshPro>().text = string.Concat(data.dmg);
+        data.prefab.transform.Find("Type").GetComponent<TextMeshPro>().text = string.Concat(data.cardType);
         var card = Instantiate(data.prefab, hand);
         card.GetComponent<Card>().data = data;
         deck.Remove(deck[0]);
@@ -74,6 +84,21 @@ public class PlayerDeck : MonoBehaviour
 
     public void CreateCard(CardDataSo data) 
     {
+        if (hand.childCount >= 10)
+        {
+            return;
+        }
+        if (data.isActionCost)
+        {
+            data.prefab.transform.Find("price").GetComponent<TextMeshPro>().text = string.Concat(data.cost) + " ap";
+        }
+        else
+        {
+            data.prefab.transform.Find("price").GetComponent<TextMeshPro>().text = string.Concat(data.cost) + " rp";
+        }
+        data.prefab.transform.Find("Desc").GetComponent<TextMeshPro>().text = string.Concat(data.description);
+        data.prefab.transform.Find("dmg").GetComponent<TextMeshPro>().text = string.Concat(data.dmg);
+        data.prefab.transform.Find("Type").GetComponent<TextMeshPro>().text = string.Concat(data.cardType);
         var card = Instantiate(data.prefab, hand);
         card.GetComponent<Card>().data = data;
     }
