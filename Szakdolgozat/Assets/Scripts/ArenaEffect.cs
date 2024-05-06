@@ -55,11 +55,9 @@ public class ArenaEffect : CardSlot
         {
             if (arenaEffect != GameManager.instance.cardsOnBoard[i])
             {
-                print("asd");
                 print(GameManager.instance.cardsOnBoard[i].name);
                 return;
             }
-            print(arenaEffect.name);
             print(GameManager.instance.cardsOnBoard[i].name);
             MovementManager.instance.selectedCard.transform.GetComponent<CardAction>().PlayCard();
             GameManager.instance.playerDeck.AddCardToDeadDeck
@@ -73,6 +71,5 @@ public class ArenaEffect : CardSlot
             break;
         }
         arenaEffect = MovementManager.instance.selectedCard;
-        print(arenaEffect.name);
     }
 }
