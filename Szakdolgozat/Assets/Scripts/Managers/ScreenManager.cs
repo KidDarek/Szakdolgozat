@@ -5,6 +5,8 @@ using UnityEngine;
 public class ScreenManager : MonoBehaviour
 {
     public static ScreenManager instance;
+    public GameObject[] checks;
+    public bool[] checksBool = {false, false, true, true, false};
     public int width;
     public int height;
     public bool fullscreen;
@@ -21,5 +23,9 @@ public class ScreenManager : MonoBehaviour
     public void SetScreen()
     {
         Screen.SetResolution(width, height, fullscreen);
+        for (int i = 0; i < 5; i++)
+        {
+            checks[i].SetActive(checksBool[i]);
+        }
     }
 }
