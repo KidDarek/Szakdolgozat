@@ -43,6 +43,10 @@ public class NinjaEquipent : Equipment
             return;
         }
         GetComponent<Spell>().DealDamage(nData);
+        transform.Find("color").GetComponent<SpriteRenderer>().color = Color.white;
         GetComponent<SpriteRenderer>().color = Color.white;
+        Color tmp = GetComponent<SpriteRenderer>().color;
+        tmp.a = 1f;
+        transform.Find("color").GetComponent<SpriteRenderer>().color = tmp;
     }
 }

@@ -19,7 +19,8 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Blood Thirster
-  description: For every strike this equipment gives plus one physical attack
+  description: For every strike played this round this equipment gives plus one physical
+    attack
   dmgType: 0
   cardType: 1
   prefab: {fileID: 874573812113703234, guid: d1131063c4f960d4ab4b1960c56ccd65, type: 3}

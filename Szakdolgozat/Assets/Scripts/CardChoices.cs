@@ -15,16 +15,16 @@ public class CardChoices : MonoBehaviour
     {
         if (NewCardManager.instance.chosenCard != data)
         {
-            GetComponent<SpriteRenderer>().color = GetComponent<Card>().data.prefab.GetComponent<SpriteRenderer>().color;
+            transform.Find("color").GetComponent<SpriteRenderer>().color = GetComponent<Card>().data.prefab.transform.Find("color").GetComponent<SpriteRenderer>().color;
         }
     }
 
     private void OnMouseUpAsButton()
     {
-        GetComponent<SpriteRenderer>().color = Color.yellow;
-        Color tmp = GetComponent<SpriteRenderer>().color;
-        tmp.a = 0.2f;
-        GetComponent<SpriteRenderer>().color = tmp;
+        transform.Find("color").GetComponent<SpriteRenderer>().color = Color.yellow;
+        Color tmp = transform.Find("color").GetComponent<SpriteRenderer>().color;
+        tmp.a = 0.8f;
+        transform.Find("color").GetComponent<SpriteRenderer>().color = tmp;
         NewCardManager.instance.chosenCard = data;
         finalize.SetActive(true);
     }

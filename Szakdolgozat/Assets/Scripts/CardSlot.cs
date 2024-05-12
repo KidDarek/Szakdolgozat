@@ -22,6 +22,10 @@ public class CardSlot : MonoBehaviour
             && isSpaceOpen
             && IsSummonOrEquipment())
         {
+            if (MovementManager.instance.selectedCard.GetComponent<Card>().data.cardName == "Weapon Throw")
+            {
+                return;
+            }
             MovementManager.instance.selectedCard.transform.position = transform.position + new Vector3(0, 0, -1f);
             GameManager.instance.cardsOnBoard.Add(MovementManager.instance.selectedCard);
             LeftOrRightSlot(MovementManager.instance.selectedCard);
@@ -87,6 +91,7 @@ public class CardSlot : MonoBehaviour
                 MovementManager.instance.selectedCard.transform.rotation = Quaternion.Euler(0, 0, 0);
                 GameManager.instance.SpendActionOrReaction();
                 MovementManager.instance.isCardDragged = false;
+
             }
             else if (boardSlots[1] == GameManager.instance.cardsOnBoard[i])
             {

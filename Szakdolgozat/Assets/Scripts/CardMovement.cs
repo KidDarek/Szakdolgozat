@@ -94,7 +94,7 @@ public class CardMovement : MonoBehaviour
             Quaternion rotationValue = Quaternion.Euler(mousePosition.y - transform.position.y * 2, -(mousePosition.x - transform.position.x * 2), 0);
 
             transform.position = Vector3.Lerp(transform.position, mousePosition, Time.deltaTime * 15.0f);
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z -1.2f);
+            transform.position = new Vector3(transform.position.x, transform.position.y,-2.0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotationValue, Time.deltaTime * 15.0f);
         }
 

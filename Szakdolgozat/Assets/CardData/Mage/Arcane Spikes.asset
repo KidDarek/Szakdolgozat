@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Arcane Spikes
-  description: deal 1 + magic dmg 3 times
+  description: deal 1 for 3 + magic dmg times
   dmgType: 1
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: af20dc806d752cb48a87226b912262c2, type: 3}

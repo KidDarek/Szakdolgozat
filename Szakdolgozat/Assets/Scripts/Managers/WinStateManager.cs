@@ -8,6 +8,8 @@ public class WinStateManager : MonoBehaviour
     ClassDataSo enemy;
     [SerializeField] GameObject winScreen;
     [SerializeField] GameObject loseScreen;
+    [SerializeField] GameObject PlayerHand;
+    [SerializeField] GameObject EnemyHand;
     private void Start()
     {
         hero = GameManager.instance.heroData;
@@ -18,10 +20,14 @@ public class WinStateManager : MonoBehaviour
         if (hero.currentHp <= 0)
         {
             loseScreen.SetActive(true);
+            EnemyHand.SetActive(false);
+            PlayerHand.SetActive(false);
         }
         else if (enemy.currentHp <= 0)
         {
             winScreen.SetActive(true);
+            EnemyHand.SetActive(false);
+            PlayerHand.SetActive(false);
         }
     }
 }

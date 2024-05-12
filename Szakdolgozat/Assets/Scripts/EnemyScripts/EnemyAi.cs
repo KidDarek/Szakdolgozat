@@ -53,7 +53,7 @@ public class EnemyAi : MonoBehaviour
             }
             else if (data.currentHp < 10 && data.currentRap > 0)
             {
-                data.currentHp += 2;
+                data.currentHp += 1;
                 data.currentRap -= 1;
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);

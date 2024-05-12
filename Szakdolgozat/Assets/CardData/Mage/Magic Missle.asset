@@ -19,7 +19,7 @@ MonoBehaviour:
   isActionCost: 1
   isHealing: 0
   cardName: Magic Missile
-  description: 3x magic bonus
+  description: Deal 3x magic bonus dmg
   dmgType: 1
   cardType: 0
   prefab: {fileID: 874573812113703234, guid: 6d69cae84d7a46f4eb4d065f97ab7d3a, type: 3}

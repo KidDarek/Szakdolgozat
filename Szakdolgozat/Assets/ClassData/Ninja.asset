@@ -22,7 +22,7 @@ MonoBehaviour:
   currentRap: 3
   attackDmgBonus: 0
   spellDmgBonus: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 0eb24f137cb78914184093f1ac7e8ff6, type: 3}
   characterKlass: 0
   weapon: 0
   prefab: {fileID: 3605123740647794360, guid: 935525821727ca8428402c0a7f78d8e2, type: 3}
