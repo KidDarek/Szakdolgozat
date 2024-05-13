@@ -49,6 +49,8 @@ public class CardMovement : MonoBehaviour
                     GameManager.instance.playerDeck.AddCardToDeadDeck(GetComponent<Card>().data);
                 }
                 Destroy(gameObject);
+                parent.transform.position = new Vector3(MovementManager.instance.baseCords[0],
+                  MovementManager.instance.baseCords[1], MovementManager.instance.baseCords[2]);
             }
             else
             {
