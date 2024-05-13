@@ -6,6 +6,7 @@ public class CardSlot : MonoBehaviour
 {
     bool isSpaceOpen;
     GameObject[] boardSlots = new GameObject[2];
+    [SerializeField] GameObject hand;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,8 @@ public class CardSlot : MonoBehaviour
             GameManager.instance.SpendActionOrReaction();
             isSpaceOpen = false;
             MovementManager.instance.isCardDragged = false;
+            hand.transform.position = new Vector3(MovementManager.instance.baseCords[0],
+     MovementManager.instance.baseCords[1], MovementManager.instance.baseCords[2]);
         }
         else if (IsTouchingMouse(gameObject)
             && Input.GetMouseButtonUp(0)
@@ -43,6 +46,8 @@ public class CardSlot : MonoBehaviour
             && IsSummonOrEquipment())
         {
             ReplaceEquipment();
+            hand.transform.position = new Vector3(MovementManager.instance.baseCords[0],
+MovementManager.instance.baseCords[1], MovementManager.instance.baseCords[2]);
         }
     }
     bool IsTouchingMouse(GameObject g)

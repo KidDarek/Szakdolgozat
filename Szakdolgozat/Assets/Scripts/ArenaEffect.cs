@@ -6,6 +6,7 @@ public class ArenaEffect : CardSlot
 {
     bool isArenaOpen;
     GameObject arenaEffect;
+    [SerializeField] GameObject pHand;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,8 @@ public class ArenaEffect : CardSlot
             GameManager.instance.SpendActionOrReaction();
             isArenaOpen = false;
             MovementManager.instance.isCardDragged = false;
+            pHand.transform.position = new Vector3(MovementManager.instance.baseCords[0],
+MovementManager.instance.baseCords[1], MovementManager.instance.baseCords[2]);
         }
         else if (IsTouchingMouse(gameObject)
             && Input.GetMouseButtonUp(0)
@@ -39,6 +42,8 @@ public class ArenaEffect : CardSlot
             && MovementManager.instance.selectedCard.GetComponent<Card>().data.cardType == CardTypes.ArenaEffect)
         {
             ReplaceArena();
+            pHand.transform.position = new Vector3(MovementManager.instance.baseCords[0],
+MovementManager.instance.baseCords[1], MovementManager.instance.baseCords[2]);
         }
 
        
