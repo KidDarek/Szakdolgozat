@@ -72,7 +72,8 @@ public class EnemyAi : MonoBehaviour
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);
                 var equip = Instantiate(prefab.prefab, left);
-                equip.transform.localScale = new Vector3(1f, 1f, 0f);
+                equip.transform.localScale = new Vector3(1f, 1f, -1.5f);
+                equip.transform.localPosition = new Vector3(0f, 0f, -2f);
                 leftOpen = false;
             }
             else if (data.currentAp > 1 && data.currentHp > 16 && rightOpen && boost > 3)
@@ -82,7 +83,8 @@ public class EnemyAi : MonoBehaviour
                 var card = transform.GetChild(i);
                 Destroy(card.gameObject);
                 var equip = Instantiate(prefab.prefab, right);
-                equip.transform.localScale = new Vector3(1f, 1f, 0f);
+                equip.transform.localScale = new Vector3(1f, 1f, -1.5f);
+                equip.transform.localPosition = new Vector3(0f, 0f, -2f);
                 rightOpen = false;
             }
             else if (data.currentAp > 0)

@@ -14,7 +14,7 @@ public class NinjaSpells : Spell
         nData = GetComponent<Card>().data;
         dmg = nData.dmg;
         GetComponent<CardAction>().onCardPlayed += OnNinjaCardPlayed;
-        daggerDmgBonus = 2;
+        daggerDmgBonus = 10;
     }
 
     void OnNinjaCardPlayed()
